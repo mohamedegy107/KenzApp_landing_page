@@ -1692,7 +1692,12 @@ p {
         top: 60px; } }
 
 .about-content .main-btn {
-  margin-top: 40px; }
+  margin-top: 40px;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content; }
 
 
 /*===========================
