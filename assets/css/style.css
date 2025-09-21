@@ -2497,11 +2497,29 @@ p {
     border-bottom: 1px solid rgba(255,255,255,0.1) !important;
     padding-bottom: 10px !important;
     margin-bottom: 15px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
 }
 
 .payment-detail > div:last-child {
     border-bottom: none !important;
     margin-bottom: 0 !important;
+}
+
+/* Payment card header alignment */
+.payment-info-card h4 {
+    text-align: center !important;
+    margin-bottom: 25px !important;
+    font-weight: 600 !important;
+}
+
+/* Payment card footer alignment */
+.payment-info-card .footer-text {
+    text-align: center !important;
+    border-top: 1px solid rgba(255,255,255,0.2) !important;
+    padding-top: 20px !important;
+    margin-top: 20px !important;
 }
 
 @media (max-width: 992px) {
@@ -2538,10 +2556,24 @@ p {
         padding: 30px !important;
     }
     
+    .payment-info-card h4 {
+        text-align: center !important;
+        font-size: 20px !important;
+    }
+    
     .payment-detail > div {
         flex-direction: column !important;
         align-items: flex-start !important;
         gap: 5px !important;
+        text-align: left !important;
+    }
+    
+    .payment-detail > div span {
+        font-weight: 500 !important;
+    }
+    
+    .payment-detail > div strong {
+        color: #ffd700 !important;
     }
 }
 
@@ -2567,10 +2599,40 @@ p {
     
     .payment-info-card {
         padding: 25px !important;
+        text-align: center !important;
     }
     
     .payment-info-card h4 {
         font-size: 18px !important;
         margin-bottom: 20px !important;
+        text-align: center !important;
+    }
+    
+    .payment-detail {
+        text-align: left !important;
+    }
+    
+    .payment-detail > div {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 8px !important;
+        padding: 15px 10px !important;
+    }
+    
+    .payment-detail > div span {
+        font-size: 14px !important;
+        font-weight: 500 !important;
+    }
+    
+    .payment-detail > div strong {
+        font-size: 16px !important;
+        color: #ffd700 !important;
+        font-weight: 700 !important;
+    }
+    
+    .payment-info-card .footer-text p {
+        font-size: 12px !important;
+        text-align: center !important;
     }
 }
