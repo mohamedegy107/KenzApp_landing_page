@@ -1,0 +1,93 @@
+/*===========================
+      RESET & BASE STYLES
+===========================*/
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #8a8fa3;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  outline: none;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #8a8fa3;
+  margin: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #25396f;
+  margin: 0px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 60px;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 48px;
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 40px;
+}
+
+h4 {
+  font-size: 22px;
+  line-height: 32px;
+}
+
+h5 {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+h6 {
+  font-size: 16px;
+  line-height: 26px;
+}

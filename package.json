@@ -1,0 +1,44 @@
+{
+  "name": "kenzapp-landing-page",
+  "version": "1.0.0",
+  "description": "KenzApp Landing Page - Modular architecture with component-based development",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js build",
+    "dev": "node build.js watch",
+    "clean": "node build.js clean",
+    "serve": "node server.js",
+    "start": "npm run build && npm run serve",
+    "lint:css": "stylelint \"src/styles/**/*.css\"",
+    "lint:js": "eslint \"src/scripts/**/*.js\"",
+    "format": "prettier --write \"src/**/*.{html,css,js}\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "kenzapp",
+    "landing-page",
+    "modular",
+    "components",
+    "build-system"
+  ],
+  "author": "KenzApp Team",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "prettier": "^2.8.0",
+    "stylelint": "^15.0.0",
+    "stylelint-config-standard": "^30.0.0"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kenzapp/landing-page.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kenzapp/landing-page/issues"
+  },
+  "homepage": "https://kenzapp.com"
+}
