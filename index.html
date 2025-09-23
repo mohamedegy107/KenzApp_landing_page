@@ -1361,6 +1361,334 @@
     <!--====== SECURITY PART ENDS ======-->
 
 
+    <!--====== TECHNICAL DOCUMENTATION PART START ======-->
+
+    <section id="technical-docs" class="technical-docs-area pt-120 pb-120" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="section-title text-center pb-50">
+                        <h3 class="title" data-en="Technical Documentation" data-ar="الوثائق التقنية">Technical Documentation</h3>
+                        <p class="text" data-en="Complete API documentation and integration examples for seamless network partner integration. Built for developers, by developers." data-ar="وثائق API كاملة وأمثلة التكامل للتكامل السلس مع شركاء الشبكة. مبني للمطورين، من قبل المطورين.">
+                            Complete API documentation and integration examples for seamless network partner integration. Built for developers, by developers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- API Endpoints Section -->
+            <div class="row mb-60">
+                <div class="col-lg-12">
+                    <div class="api-section">
+                        <h4 class="api-title mb-30" data-en="API Endpoints" data-ar="نقاط نهاية API">API Endpoints</h4>
+                        
+                        <!-- Task Completion Endpoint -->
+                        <div class="api-endpoint mb-40">
+                            <h5 class="endpoint-title" data-en="Task Completion Tracking" data-ar="تتبع إنجاز المهام">Task Completion Tracking</h5>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="method post">POST</span>
+                                    <span class="endpoint-url">https://api.kenzapp.com/v1/tasks/complete</span>
+                                </div>
+                                <pre class="code-content"><code>{
+  "user_id": "usr_1234567890",
+  "offer_id": "off_abcd1234",
+  "task_id": "tsk_xyz789",
+  "completion_data": {
+    "timestamp": "2024-01-15T10:30:00Z",
+    "device_info": {
+      "platform": "android",
+      "version": "12.0",
+      "device_id": "dev_hash_abc123"
+    },
+    "verification_hash": "sha256_verification_string"
+  }
+}</code></pre>
+                            </div>
+                            
+                            <div class="response-block mt-20">
+                                <h6 class="response-title" data-en="Response" data-ar="الاستجابة">Response</h6>
+                                <pre class="code-content"><code>{
+  "status": "success",
+  "task_completion_id": "tc_987654321",
+  "payout": {
+    "amount": 2.50,
+    "currency": "USD",
+    "status": "pending_verification"
+  },
+  "verification": {
+    "method": "server_to_server",
+    "callback_scheduled": true,
+    "estimated_verification_time": "2-5 minutes"
+  }
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- User Registration Endpoint -->
+                        <div class="api-endpoint mb-40">
+                            <h5 class="endpoint-title" data-en="User Registration" data-ar="تسجيل المستخدم">User Registration</h5>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="method post">POST</span>
+                                    <span class="endpoint-url">https://api.kenzapp.com/v1/users/register</span>
+                                </div>
+                                <pre class="code-content"><code>{
+  "network_id": "net_partner123",
+  "user_data": {
+    "external_user_id": "partner_user_456",
+    "email": "user@example.com",
+    "country": "US",
+    "registration_ip": "192.168.1.1",
+    "referral_code": "REF123" // optional
+  },
+  "device_info": {
+    "platform": "ios",
+    "advertising_id": "IDFA_string_here",
+    "user_agent": "Mozilla/5.0..."
+  }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Webhook Documentation -->
+            <div class="row mb-60">
+                <div class="col-lg-12">
+                    <div class="webhook-section">
+                        <h4 class="api-title mb-30" data-en="Webhook Callbacks" data-ar="استدعاءات Webhook">Webhook Callbacks</h4>
+                        
+                        <div class="webhook-info mb-30">
+                            <p data-en="Kenz sends real-time postback notifications to your configured endpoint when tasks are completed and verified. All callbacks include HMAC-SHA256 signatures for security." data-ar="يرسل Kenz إشعارات postback في الوقت الفعلي إلى نقطة النهاية المكونة عند اكتمال المهام والتحقق منها. تتضمن جميع الاستدعاءات توقيعات HMAC-SHA256 للأمان.">
+                                Kenz sends real-time postback notifications to your configured endpoint when tasks are completed and verified. All callbacks include HMAC-SHA256 signatures for security.
+                            </p>
+                        </div>
+
+                        <!-- Postback Example -->
+                        <div class="webhook-example">
+                            <h5 class="endpoint-title" data-en="Task Completion Postback" data-ar="إرجاع إنجاز المهمة">Task Completion Postback</h5>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="method post">POST</span>
+                                    <span class="endpoint-url">https://your-domain.com/kenz-postback</span>
+                                </div>
+                                <pre class="code-content"><code>// URL Parameters
+user_id=usr_1234567890
+&offer_id=off_abcd1234
+&task_id=tsk_xyz789
+&payout=2.50
+&currency=USD
+&status=completed
+&completion_time=2024-01-15T10:35:22Z
+&network_id=net_partner123
+&external_user_id=partner_user_456
+&transaction_id=txn_abc123def456
+&signature=hmac_sha256_signature_here
+
+// JSON Payload (alternative format)
+{
+  "event": "task_completed",
+  "data": {
+    "user_id": "usr_1234567890",
+    "offer_id": "off_abcd1234",
+    "task_id": "tsk_xyz789",
+    "payout": {
+      "amount": 2.50,
+      "currency": "USD"
+    },
+    "status": "completed",
+    "completion_time": "2024-01-15T10:35:22Z",
+    "network_id": "net_partner123",
+    "external_user_id": "partner_user_456",
+    "transaction_id": "txn_abc123def456",
+    "verification": {
+      "method": "server_to_server",
+      "confidence_score": 0.98,
+      "fraud_check_passed": true
+    }
+  },
+  "signature": "hmac_sha256_signature_here",
+  "timestamp": 1705315522
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Signature Verification -->
+                        <div class="signature-section mt-30">
+                            <h6 class="signature-title" data-en="Signature Verification" data-ar="التحقق من التpodقيع">Signature Verification</h6>
+                            <div class="code-block">
+                                <pre class="code-content"><code>// PHP Example
+$secret = 'your_webhook_secret';
+$payload = file_get_contents('php://input');
+$signature = hash_hmac('sha256', $payload, $secret);
+$expected = $_SERVER['HTTP_X_KENZ_SIGNATURE'];
+
+if (hash_equals($signature, $expected)) {
+    // Process webhook
+} else {
+    // Invalid signature
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integration Examples -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="integration-section">
+                        <h4 class="api-title mb-30" data-en="Integration Examples" data-ar="أمثلة التكامل">Integration Examples</h4>
+                        
+                        <!-- SDK Integration -->
+                        <div class="integration-example mb-40">
+                            <h5 class="endpoint-title" data-en="JavaScript SDK Integration" data-ar="تكامل JavaScript SDK">JavaScript SDK Integration</h5>
+                            <div class="code-block">
+                                <pre class="code-content"><code>// Initialize Kenz SDK
+import KenzSDK from '@kenzapp/sdk';
+
+const kenz = new KenzSDK({
+  apiKey: 'your_api_key',
+  networkId: 'net_partner123',
+  environment: 'production' // or 'sandbox'
+});
+
+// Track user registration
+await kenz.registerUser({
+  externalUserId: 'partner_user_456',
+  email: 'user@example.com',
+  country: 'US'
+});
+
+// Track task completion
+await kenz.completeTask({
+  offerId: 'off_abcd1234',
+  userId: 'usr_1234567890',
+  completionData: {
+    // Task-specific completion data
+  }
+});
+
+// Listen for real-time events
+kenz.on('taskCompleted', (data) => {
+  console.log('Task completed:', data);
+  // Update your UI or trigger rewards
+});</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- cURL Integration -->
+                        <div class="integration-example mb-40">
+                            <h5 class="endpoint-title" data-en="cURL Integration Example" data-ar="مثال تكامل cURL">cURL Integration Example</h5>
+                            <div class="code-block">
+                                <pre class="code-content"><code># Register a new user
+curl -X POST https://api.kenzapp.com/v1/users/register \
+  -H "Authorization: Bearer your_api_key" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "network_id": "net_partner123",
+    "user_data": {
+      "external_user_id": "partner_user_456",
+      "email": "user@example.com",
+      "country": "US"
+    }
+  }'
+
+# Complete a task
+curl -X POST https://api.kenzapp.com/v1/tasks/complete \
+  -H "Authorization: Bearer your_api_key" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_id": "usr_1234567890",
+    "offer_id": "off_abcd1234",
+    "task_id": "tsk_xyz789",
+    "completion_data": {
+      "timestamp": "2024-01-15T10:30:00Z"
+    }
+  }'</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Python Integration -->
+                        <div class="integration-example">
+                            <h5 class="endpoint-title" data-en="Python Integration Example" data-ar="مثال تكامل Python">Python Integration Example</h5>
+                            <div class="code-block">
+                                <pre class="code-content"><code>import requests
+import hmac
+import hashlib
+from datetime import datetime
+
+class KenzAPI:
+    def __init__(self, api_key, network_id, base_url="https://api.kenzapp.com/v1"):
+        self.api_key = api_key
+        self.network_id = network_id
+        self.base_url = base_url
+        self.headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        }
+    
+    def register_user(self, external_user_id, email, country):
+        payload = {
+            "network_id": self.network_id,
+            "user_data": {
+                "external_user_id": external_user_id,
+                "email": email,
+                "country": country
+            }
+        }
+        response = requests.post(f"{self.base_url}/users/register", 
+                               json=payload, headers=self.headers)
+        return response.json()
+    
+    def complete_task(self, user_id, offer_id, task_id):
+        payload = {
+            "user_id": user_id,
+            "offer_id": offer_id,
+            "task_id": task_id,
+            "completion_data": {
+                "timestamp": datetime.utcnow().isoformat() + "Z"
+            }
+        }
+        response = requests.post(f"{self.base_url}/tasks/complete", 
+                               json=payload, headers=self.headers)
+        return response.json()
+    
+    def verify_webhook(self, payload, signature, secret):
+        expected = hmac.new(secret.encode(), payload.encode(), hashlib.sha256).hexdigest()
+        return hmac.compare_digest(signature, expected)
+
+# Usage
+kenz = KenzAPI("your_api_key", "net_partner123")
+result = kenz.register_user("partner_user_456", "user@example.com", "US")</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documentation Links -->
+            <div class="row mt-50">
+                <div class="col-lg-12 text-center">
+                    <div class="docs-links">
+                        <h5 class="mb-30" data-en="Additional Resources" data-ar="موارد إضافية">Additional Resources</h5>
+                        <div class="docs-buttons">
+                            <a href="#" class="docs-btn" data-en="Full API Documentation" data-ar="وثائق API الكاملة">Full API Documentation</a>
+                            <a href="#" class="docs-btn" data-en="SDK Downloads" data-ar="تنزيلات SDK">SDK Downloads</a>
+                            <a href="#" class="docs-btn" data-en="Integration Support" data-ar="دعم التكامل">Integration Support</a>
+                            <a href="#" class="docs-btn" data-en="Sandbox Environment" data-ar="بيئة الاختبار">Sandbox Environment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--====== TECHNICAL DOCUMENTATION PART ENDS ======-->
+
+
     <!--====== DOWNLOAD PART START ======-->
 
     <section id="download" class="download-area pt-70 pb-40">
