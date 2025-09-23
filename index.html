@@ -159,7 +159,7 @@
                     <!-- <div class="col-lg-4 col-md-6 col-sm-6 col-10"> -->
                     <div class="app-frame-container" style="transform: rotate(-15deg);">
                         <img src="assets/images/app-frame.png" alt="phone frame" class="app-frame">
-                        <img src="assets/images/kenzApp-home-screen.jpg" alt="Kenz app" class="app-screenshot">
+                        <img src="assets/images/Kenz-home-screen.jpg" alt="Kenz app" class="app-screenshot">
                     </div> <!-- header image -->
                     <!-- </div> -->
                 </div> <!-- row -->
@@ -400,7 +400,7 @@
                         <div class="about-shape"></div>
                         <div class="app-frame-container">
                             <img src="assets/images/app-frame.png" alt="phone frame" class="app-frame">
-                            <img src="assets/images/kenzApp-home-screen.jpg" alt="Kenz app" class="app-screenshot">
+                            <img src="assets/images/Kenz-home-screen.jpg" alt="Kenz app" class="app-screenshot">
                         </div>
                     </div> <!-- about image -->
                 </div>
@@ -1460,7 +1460,8 @@
                                     compliance for our launch phase. <strong>End-to-end encryption</strong> and
                                     <strong>secure cloud storage</strong> are planned features that will protect all
                                     user data upon full implementation. We are preparing for formal audits and
-                                    compliance certifications as part of our roadmap.</p>
+                                    compliance certifications as part of our roadmap.
+                                </p>
                             </div>
                         </div>
                         <div class="security-item d-flex align-items-start">
@@ -1586,7 +1587,7 @@
                             <div class="code-block">
                                 <div class="code-header">
                                     <span class="method post">POST</span>
-                                    <span class="endpoint-url">https://api.kenzapp.com/v1/tasks/complete</span>
+                                    <span class="endpoint-url">https://api.Kenz.com/v1/tasks/complete</span>
                                 </div>
                                 <pre class="code-content"><code>{
   "user_id": "usr_1234567890",
@@ -1630,7 +1631,7 @@
                             <div class="code-block">
                                 <div class="code-header">
                                     <span class="method post">POST</span>
-                                    <span class="endpoint-url">https://api.kenzapp.com/v1/users/register</span>
+                                    <span class="endpoint-url">https://api.Kenz.com/v1/users/register</span>
                                 </div>
                                 <pre class="code-content"><code>{
   "network_id": "net_partner123",
@@ -1753,7 +1754,7 @@ if (hash_equals($signature, $expected)) {
                                 data-ar="تكامل JavaScript SDK">JavaScript SDK Integration</h5>
                             <div class="code-block">
                                 <pre class="code-content"><code>// Initialize Kenz SDK
-import KenzSDK from '@kenzapp/sdk';
+import KenzSDK from '@Kenz/sdk';
 
 const kenz = new KenzSDK({
   apiKey: 'your_api_key',
@@ -1791,7 +1792,7 @@ kenz.on('taskCompleted', (data) => {
                                 Integration Example</h5>
                             <div class="code-block">
                                 <pre class="code-content"><code># Register a new user
-curl -X POST https://api.kenzapp.com/v1/users/register \
+curl -X POST https://api.Kenz.com/v1/users/register \
   -H "Authorization: Bearer your_api_key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -1804,7 +1805,7 @@ curl -X POST https://api.kenzapp.com/v1/users/register \
   }'
 
 # Complete a task
-curl -X POST https://api.kenzapp.com/v1/tasks/complete \
+curl -X POST https://api.Kenz.com/v1/tasks/complete \
   -H "Authorization: Bearer your_api_key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -1829,7 +1830,7 @@ import hashlib
 from datetime import datetime
 
 class KenzAPI:
-    def __init__(self, api_key, network_id, base_url="https://api.kenzapp.com/v1"):
+    def __init__(self, api_key, network_id, base_url="https://api.Kenz.com/v1"):
         self.api_key = api_key
         self.network_id = network_id
         self.base_url = base_url
@@ -1908,7 +1909,7 @@ result = kenz.register_user("partner_user_456", "user@example.com", "US")</code>
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-6 col-md-9">
                     <div class="download-image mt-50 wow fadeInRightBig" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                        <img class="image kenz-home-screen" src="assets/images/kenzApp-home-screen.jpg" alt="download">
+                        <img class="image kenz-home-screen" src="assets/images/Kenz-home-screen.jpg" alt="download">
 
                         <div class="download-shape-1"></div>
                         <div class="download-shape-2">
@@ -1968,7 +1969,7 @@ result = kenz.register_user("partner_user_456", "user@example.com", "US")</code>
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.2s">
                             <a class="logo" href="#">
-                                <div class="animated-logo">KenzApp</div>
+                                <div class="animated-logo">Kenz</div>
                             </a>
                             <p class="text"
                                 data-en="Kenz is a beta task completion platform being developed to help users prepare for future earning opportunities through simple tasks. Our app is designed to be user-friendly and accessible to everyone upon official launch."
@@ -2024,7 +2025,7 @@ result = kenz.register_user("partner_user_456", "user@example.com", "US")</code>
                                 <h4 class="title" data-en="Partner With Us" data-ar="شراكة معنا">Partner With Us</h4>
                             </div>
                             <div style="margin-bottom: 20px;">
-                                <p style="color: #fff; font-size: 14px; line-height: 1.6;"
+                                <p style="color: #999; font-size: 14px; line-height: 1.6;"
                                     data-en="Interested in collaborating? Contact us to discuss API integration opportunities and partnership possibilities."
                                     data-ar="مهتم بالتعاون؟ اتصل بنا لمناقشة فرص تكامل API وإمكانيات الشراكة.">
                                     Interested in collaborating? Contact us to discuss API integration opportunities and

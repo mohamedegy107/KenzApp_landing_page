@@ -1,1 +1,1 @@
-# KenzApp_landing_page
+# Kenz_landing_page
