@@ -2644,3 +2644,246 @@ p {
         text-align: center !important;
     }
 }
+
+/*===========================
+    08. Dashboard Preview Section
+===========================*/
+
+.dashboard-preview-area {
+    background: #f8f9fa;
+    position: relative;
+}
+
+.dashboard-preview-area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e9ecef, transparent);
+}
+
+.preview-item {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.preview-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.preview-content {
+    padding: 20px 0;
+}
+
+.preview-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #38424d;
+    margin-bottom: 15px;
+    font-family: "Poppins", sans-serif;
+}
+
+.preview-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.preview-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.preview-features li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #555;
+}
+
+.preview-features li i {
+    color: #28a745;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.beta-label {
+    margin-top: 20px;
+}
+
+.beta-label .badge {
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+}
+
+.badge-secondary {
+    background: linear-gradient(135deg, #6c757d, #495057);
+    color: white;
+    border: none;
+}
+
+.badge-info {
+    background: linear-gradient(135deg, #17a2b8, #138496);
+    color: white;
+    border: none;
+}
+
+.preview-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.dashboard-mockup,
+.task-mockup {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.mobile-mockup {
+    max-width: 280px;
+    height: auto;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.dashboard-mockup:hover,
+.task-mockup:hover,
+.mobile-mockup:hover {
+    transform: scale(1.02);
+}
+
+.preview-cta {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    padding: 40px;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+}
+
+.preview-cta h5 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.preview-cta p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.preview-cta .main-btn {
+    background: white;
+    color: #007bff;
+    border: 2px solid white;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.preview-cta .main-btn:hover {
+    background: transparent;
+    color: white;
+    border-color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .preview-item {
+        padding: 30px 20px;
+        margin-bottom: 40px;
+    }
+    
+    .preview-title {
+        font-size: 20px;
+    }
+    
+    .preview-description {
+        font-size: 14px;
+    }
+    
+    .mobile-mockup {
+        max-width: 240px;
+    }
+    
+    .preview-cta {
+        padding: 30px 20px;
+    }
+    
+    .preview-cta h5 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .dashboard-preview-area {
+        padding: 60px 0;
+    }
+    
+    .preview-item {
+        padding: 25px 15px;
+        margin-bottom: 30px;
+    }
+    
+    .preview-title {
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    .preview-description {
+        font-size: 13px;
+        text-align: center;
+    }
+    
+    .preview-features {
+        text-align: left;
+        margin: 20px 0;
+    }
+    
+    .beta-label {
+        text-align: center;
+    }
+    
+    .mobile-mockup {
+        max-width: 200px;
+    }
+    
+    .preview-cta {
+        padding: 25px 15px;
+    }
+    
+    .preview-cta h5 {
+        font-size: 18px;
+    }
+    
+    .preview-cta p {
+        font-size: 14px;
+    }
+}
