@@ -35,6 +35,9 @@
     <!--====== Cookie Consent CSS ======-->
     <link rel="stylesheet" href="assets/css/cookie-consent.css">
 
+    <!--====== Waitlist CSS ======-->
+    <link rel="stylesheet" href="assets/css/waitlist.css">
+
     <!-- Language Switcher -->
     <div class="language-switcher">
         <select id="languageSelect" onchange="switchLanguage()">
@@ -1948,6 +1951,11 @@ result = kenz.register_user("partner_user_456", "user@example.com", "US")</code>
                         data-wow-delay="0.5s">
                         <h3 class="download-title" data-en="Coming Soon - Join the Waitlist!"
                             data-ar="قادم قريباً - انضم لقائمة الانتظار!">Coming Soon - Join the Waitlist!</h3>
+                        <div class="launch-timeline" style="text-align: center; margin: 20px 0; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; color: white;">
+                            <p style="margin: 0; font-size: 16px; font-weight: 600;" 
+                               data-en="Expected beta launch: Q4 2025" 
+                               data-ar="الإطلاق التجريبي المتوقع: الربع الرابع 2025">Expected beta launch: Q4 2025</p>
+                        </div>
                         <p class="text"
                             data-en="Join our beta testing community and help shape the future of task completion. Our app will be free and easy to use when launched. Set your daily work time, complete tasks at your own pace, and prepare for earning opportunities at launch. Join the waitlist now and be part of our development journey!"
                             data-ar="انضم إلى مجتمع الاختبار التجريبي وساعد في تشكيل مستقبل إنجاز المهام. تطبيقنا سيكون مجاني وسهل الاستخدام عند الإطلاق. حدد وقت عملك اليومي، أكمل المهام بوتيرتك الخاصة، واستعد لفرص الربح عند الإطلاق. انضم لقائمة الانتظار الآن وكن جزءاً من رحلة التطوير!">
@@ -1956,6 +1964,58 @@ result = kenz.register_user("partner_user_456", "user@example.com", "US")</code>
                             pace, and
                             prepare for earning opportunities at launch. Join the waitlist now and be part of our
                             development journey!</p>
+                        
+                        <!-- Waitlist Form -->
+                        <div class="waitlist-form-container">
+                            <form id="waitlist-form" class="waitlist-form" novalidate>
+                                <h4 class="waitlist-title" 
+                                    data-en="Join the Waitlist" 
+                                    data-ar="انضم لقائمة الانتظار">Join the Waitlist</h4>
+                                <p class="waitlist-subtitle" 
+                                   data-en="Be the first to know when Kenz Tasks launches!" 
+                                   data-ar="كن أول من يعرف عند إطلاق كنز تاسكس!">Be the first to know when Kenz Tasks launches!</p>
+                                
+                                <div class="form-group">
+                                    <input 
+                                        type="email" 
+                                        id="waitlist-email" 
+                                        class="form-input" 
+                                        placeholder="Enter your email address"
+                                        data-en-placeholder="Enter your email address"
+                                        data-ar-placeholder="أدخل عنوان بريدك الإلكتروني"
+                                        required
+                                        aria-describedby="email-error"
+                                        aria-label="Email address for waitlist"
+                                        autocomplete="email"
+                                    >
+                                    <div id="email-error" class="error-message" role="alert" aria-live="polite"></div>
+                                </div>
+                                
+                                <button 
+                                    type="submit" 
+                                    id="waitlist-submit" 
+                                    class="waitlist-btn"
+                                    aria-describedby="success-message global-error-message"
+                                >
+                                    <span class="btn-text" 
+                                          data-en="Join Waitlist" 
+                                          data-ar="انضم لقائمة الانتظار">Join Waitlist</span>
+                                    <div class="loading-spinner">
+                                        <div class="spinner"></div>
+                                    </div>
+                                </button>
+                                
+                                <div id="success-message" class="success-message" role="alert" aria-live="polite"></div>
+                                <div id="global-error-message" class="error-message-global" role="alert" aria-live="polite"></div>
+                                
+                                <div class="waitlist-stats">
+                                    <span class="stat-icon">👥</span>
+                                    <span data-en="Join thousands already on the waitlist" 
+                                          data-ar="انضم للآلاف الموجودين بالفعل في قائمة الانتظار">Join thousands already on the waitlist</span>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- End Waitlist Form -->
                         <ul>
                             <li><a class="app-store disabled-store" href="#"
                                     style="opacity: 0.6; cursor: not-allowed;"><img src="assets/images/app-store.png"
@@ -1966,6 +2026,10 @@ result = kenz.register_user("partner_user_456", "user@example.com", "US")</code>
                                         alt="Coming Soon to Play Store"></a>
                             </li>
                         </ul>
+                        <p class="coming-soon-text" style="text-align: center; margin-top: 15px; color: #666; font-size: 14px; font-style: italic;">
+                            <span data-en="Coming soon to App Store & Google Play" 
+                                  data-ar="قريباً على متجر التطبيقات وجوجل بلاي">Coming soon to App Store & Google Play</span>
+                        </p>
                     </div> <!-- download image -->
                 </div>
             </div> <!-- row -->
@@ -2057,6 +2121,13 @@ result = kenz.register_user("partner_user_456", "user@example.com", "US")</code>
                                     Interested in collaborating? Contact us to discuss API integration opportunities and
                                     partnership possibilities.
                                 </p>
+                                <div style="margin-top: 15px; padding: 10px; background: rgba(102, 126, 234, 0.1); border-radius: 5px; border-left: 3px solid #667eea;">
+                                    <p style="color: #667eea; font-weight: 600; margin: 0; font-size: 14px;"
+                                       data-en="For direct inquiries: partners@kenztasks.com"
+                                       data-ar="للاستفسارات المباشرة: partners@kenztasks.com">
+                                        For direct inquiries: partners@kenztasks.com
+                                    </p>
+                                </div>
                             </div>
                             <ul class="contact-list">
                                 <li>
@@ -2242,6 +2313,9 @@ result = kenz.register_user("partner_user_456", "user@example.com", "US")</code>
 
     <!--====== Cookie Consent js ======-->
     <script src="assets/js/cookie-consent.js"></script>
+
+    <!--====== Waitlist js ======-->
+    <script src="assets/js/waitlist.js"></script>
 
 </body>
 
