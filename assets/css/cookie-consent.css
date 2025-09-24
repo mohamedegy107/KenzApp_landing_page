@@ -43,7 +43,8 @@
     margin: 0;
     font-size: 14px;
     line-height: 1.5;
-    opacity: 0.95;
+    color: white !important;
+    opacity: 1;
 }
 
 .cookie-consent-buttons {
