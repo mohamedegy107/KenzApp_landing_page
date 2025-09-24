@@ -1,0 +1,168 @@
+{
+  "postback_data": {
+    "timestamp": "2025-01-27T14:30:45.123Z",
+    "event_type": "task_completion",
+    "transaction_id": "TXN_20250127_143045_ABC123",
+    "user_data": {
+      "user_id": "USR_789456123",
+      "hashed_email": "a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456",
+      "country_code": "US",
+      "age_range": "25-34",
+      "gender": "M",
+      "language": "en",
+      "registration_date": "2024-12-15T09:22:33.000Z",
+      "user_tier": "premium",
+      "verification_status": "verified"
+    },
+    "task_data": {
+      "task_id": "TASK_OT_2025_001234",
+      "task_type": "survey",
+      "partner_network": "OfferToro",
+      "partner_offer_id": "OT_SURVEY_789123",
+      "task_name": "Consumer Preferences Survey 2025",
+      "category": "market_research",
+      "difficulty_level": "medium",
+      "estimated_duration": 15,
+      "actual_duration": 18,
+      "start_time": "2025-01-27T14:12:30.000Z",
+      "completion_time": "2025-01-27T14:30:45.000Z",
+      "status": "completed",
+      "quality_score": 95.5,
+      "fraud_score": 2.1,
+      "completion_rate": 100
+    },
+    "reward_data": {
+      "base_reward": 2.50,
+      "bonus_reward": 0.25,
+      "total_reward": 2.75,
+      "currency": "USD",
+      "conversion_rate": 1.0,
+      "local_currency": "USD",
+      "local_amount": 2.75,
+      "payment_method": "paypal",
+      "payout_status": "pending",
+      "payout_date": null,
+      "processing_fee": 0.05
+    },
+    "tracking_data": {
+      "ip_address": "192.168.1.100",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      "device_type": "desktop",
+      "browser": "Chrome",
+      "browser_version": "120.0.0.0",
+      "operating_system": "Windows",
+      "os_version": "10",
+      "screen_resolution": "1920x1080",
+      "timezone": "America/New_York",
+      "referrer": "https://www.kenztasks.com/dashboard",
+      "session_id": "SESS_20250127_141200_XYZ789",
+      "click_id": "CLICK_OT_20250127_141230",
+      "sub_id_1": "campaign_winter_2025",
+      "sub_id_2": "desktop_users",
+      "sub_id_3": "premium_tier"
+    },
+    "compliance_data": {
+      "gdpr_consent": true,
+      "ccpa_consent": true,
+      "marketing_consent": false,
+      "data_sharing_consent": true,
+      "consent_timestamp": "2024-12-15T09:25:10.000Z",
+      "consent_version": "v2.1",
+      "privacy_policy_version": "v3.2",
+      "terms_version": "v2.8",
+      "cookie_consent": {
+        "essential": true,
+        "analytics": true,
+        "marketing": false,
+        "timestamp": "2025-01-27T14:10:15.000Z"
+      }
+    },
+    "verification_data": {
+      "email_verified": true,
+      "phone_verified": false,
+      "identity_verified": true,
+      "address_verified": false,
+      "payment_method_verified": true,
+      "kyc_status": "completed",
+      "risk_level": "low",
+      "fraud_flags": [],
+      "quality_flags": [],
+      "account_standing": "good"
+    },
+    "partner_specific": {
+      "offertoro": {
+        "offer_wall_id": "OW_789123",
+        "campaign_id": "CAMP_2025_Q1_001",
+        "advertiser_id": "ADV_CONSUMER_RESEARCH",
+        "payout_tier": "tier_2",
+        "conversion_flow": "direct",
+        "attribution_model": "last_click",
+        "custom_parameters": {
+          "survey_length": "medium",
+          "target_demographic": "male_25_34_us",
+          "quality_threshold": 90
+        }
+      }
+    },
+    "system_metadata": {
+      "api_version": "v2.1",
+      "postback_version": "1.0",
+      "server_timestamp": "2025-01-27T14:30:45.456Z",
+      "processing_time_ms": 234,
+      "retry_count": 0,
+      "batch_id": "BATCH_20250127_1430",
+      "environment": "production",
+      "region": "us-east-1"
+    }
+  },
+  "security": {
+    "signature": "sha256:a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6",
+    "timestamp": "2025-01-27T14:30:45.123Z",
+    "nonce": "NONCE_20250127_143045_789",
+    "api_key_hash": "API_HASH_XYZ789ABC123DEF456"
+  },
+  "additional_events": [
+    {
+      "event_type": "task_started",
+      "timestamp": "2025-01-27T14:12:30.000Z",
+      "data": {
+        "task_id": "TASK_OT_2025_001234",
+        "user_id": "USR_789456123",
+        "session_id": "SESS_20250127_141200_XYZ789"
+      }
+    },
+    {
+      "event_type": "task_progress",
+      "timestamp": "2025-01-27T14:21:15.000Z",
+      "data": {
+        "task_id": "TASK_OT_2025_001234",
+        "progress_percentage": 50,
+        "current_question": 8,
+        "total_questions": 16
+      }
+    },
+    {
+      "event_type": "quality_check",
+      "timestamp": "2025-01-27T14:30:30.000Z",
+      "data": {
+        "task_id": "TASK_OT_2025_001234",
+        "quality_score": 95.5,
+        "fraud_score": 2.1,
+        "checks_passed": [
+          "response_time_validation",
+          "answer_consistency",
+          "attention_check",
+          "duplicate_detection"
+        ],
+        "checks_failed": []
+      }
+    }
+  ],
+  "sample_info": {
+    "description": "Sample postback data for Kenz Tasks network integration",
+    "use_case": "Demonstrates comprehensive tracking for survey completion",
+    "compliance_notes": "Includes GDPR/CCPA consent tracking and user privacy protection",
+    "integration_guide": "https://docs.kenztasks.com/api/postbacks",
+    "contact": "partnerships@kenztasks.com"
+  }
+}

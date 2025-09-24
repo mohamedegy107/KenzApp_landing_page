@@ -32,6 +32,9 @@
     <!--====== Style CSS ======-->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!--====== Cookie Consent CSS ======-->
+    <link rel="stylesheet" href="assets/css/cookie-consent.css">
+
     <!-- Language Switcher -->
     <div class="language-switcher">
         <select id="languageSelect" onchange="switchLanguage()">
@@ -1610,7 +1613,7 @@
                             <div class="code-block">
                                 <div class="code-header">
                                     <span class="method post">POST</span>
-                                    <span class="endpoint-url">https://api.Kenz.com/v1/tasks/complete</span>
+                                    <span class="endpoint-url">https://api.kenztasks.com/v1/tasks/complete</span>
                                 </div>
                                 <pre class="code-content"><code>{
   "user_id": "usr_1234567890",
@@ -1654,7 +1657,7 @@
                             <div class="code-block">
                                 <div class="code-header">
                                     <span class="method post">POST</span>
-                                    <span class="endpoint-url">https://api.Kenz.com/v1/users/register</span>
+                                    <span class="endpoint-url">https://api.kenztasks.com/v1/users/register</span>
                                 </div>
                                 <pre class="code-content"><code>{
   "network_id": "net_partner123",
@@ -1815,7 +1818,7 @@ kenz.on('taskCompleted', (data) => {
                                 Integration Example</h5>
                             <div class="code-block">
                                 <pre class="code-content"><code># Register a new user
-curl -X POST https://api.Kenz.com/v1/users/register \
+curl -X POST https://api.kenztasks.com/v1/users/register \
   -H "Authorization: Bearer your_api_key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -1828,7 +1831,7 @@ curl -X POST https://api.Kenz.com/v1/users/register \
   }'
 
 # Complete a task
-curl -X POST https://api.Kenz.com/v1/tasks/complete \
+curl -X POST https://api.kenztasks.com/v1/tasks/complete \
   -H "Authorization: Bearer your_api_key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -1853,7 +1856,7 @@ import hashlib
 from datetime import datetime
 
 class KenzAPI:
-    def __init__(self, api_key, network_id, base_url="https://api.Kenz.com/v1"):
+    def __init__(self, api_key, network_id, base_url="https://api.kenztasks.com/v1"):
         self.api_key = api_key
         self.network_id = network_id
         self.base_url = base_url
@@ -2108,6 +2111,94 @@ result = kenz.register_user("partner_user_456", "user@example.com", "US")</code>
 
     <!--====== BACK TOP TOP PART ENDS ======-->
 
+    <!--====== COOKIE CONSENT BANNER START ======-->
+    <div id="cookieConsentBanner" class="cookie-consent-banner" style="display: none;">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                <p data-en="We use cookies to enhance your experience and ensure compliance with data protection regulations. By continuing to use our site, you consent to our use of cookies."
+                    data-ar="نستخدم ملفات تعريف الارتباط لتحسين تجربتك وضمان الامتثال للوائح حماية البيانات. من خلال الاستمرار في استخدام موقعنا، فإنك توافق على استخدامنا لملفات تعريف الارتباط.">
+                    We use cookies to enhance your experience and ensure compliance with data protection regulations. By
+                    continuing to use our site, you consent to our use of cookies.
+                </p>
+            </div>
+            <div class="cookie-consent-buttons">
+                <button id="acceptCookies" class="btn-accept" data-en="Accept All" data-ar="قبول الكل">Accept
+                    All</button>
+                <button id="manageCookies" class="btn-manage" data-en="Manage Preferences"
+                    data-ar="إدارة التفضيلات">Manage Preferences</button>
+                <button id="rejectCookies" class="btn-reject" data-en="Reject Non-Essential"
+                    data-ar="رفض غير الأساسية">Reject Non-Essential</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Preferences Modal -->
+    <div id="cookiePreferencesModal" class="cookie-modal" style="display: none;">
+        <div class="cookie-modal-content">
+            <div class="cookie-modal-header">
+                <h3 data-en="Cookie Preferences" data-ar="تفضيلات ملفات تعريف الارتباط">Cookie Preferences</h3>
+                <span class="cookie-modal-close">&times;</span>
+            </div>
+            <div class="cookie-modal-body">
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <input type="checkbox" id="essentialCookies" checked disabled>
+                        <label for="essentialCookies">
+                            <strong data-en="Essential Cookies" data-ar="ملفات تعريف الارتباط الأساسية">Essential
+                                Cookies</strong>
+                        </label>
+                    </div>
+                    <p data-en="These cookies are necessary for the website to function and cannot be switched off."
+                        data-ar="هذه الملفات ضرورية لعمل الموقع ولا يمكن إيقافها.">
+                        These cookies are necessary for the website to function and cannot be switched off.
+                    </p>
+                </div>
+
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <input type="checkbox" id="analyticsCookies">
+                        <label for="analyticsCookies">
+                            <strong data-en="Analytics Cookies" data-ar="ملفات تعريف الارتباط التحليلية">Analytics
+                                Cookies</strong>
+                        </label>
+                    </div>
+                    <p data-en="These cookies help us understand how visitors interact with our website."
+                        data-ar="تساعدنا هذه الملفات في فهم كيفية تفاعل الزوار مع موقعنا.">
+                        These cookies help us understand how visitors interact with our website.
+                    </p>
+                </div>
+
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <input type="checkbox" id="marketingCookies">
+                        <label for="marketingCookies">
+                            <strong data-en="Marketing Cookies" data-ar="ملفات تعريف الارتباط التسويقية">Marketing
+                                Cookies</strong>
+                        </label>
+                    </div>
+                    <p data-en="These cookies are used to deliver personalized advertisements and track campaign effectiveness."
+                        data-ar="تُستخدم هذه الملفات لتقديم إعلانات مخصصة وتتبع فعالية الحملات.">
+                        These cookies are used to deliver personalized advertisements and track campaign effectiveness.
+                    </p>
+                </div>
+            </div>
+            <div class="cookie-modal-footer">
+                <button id="savePreferences" class="btn-save" data-en="Save Preferences" data-ar="حفظ التفضيلات">Save
+                    Preferences</button>
+                <button id="withdrawConsent" class="btn-withdraw" data-en="Withdraw All Consent"
+                    data-ar="سحب جميع الموافقات">Withdraw All Consent</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Link (Always Visible) -->
+    <div class="cookie-settings-link">
+        <button id="openCookieSettings" class="btn-cookie-settings" data-en="Cookie Settings"
+            data-ar="إعدادات ملفات تعريف الارتباط">Cookie Settings</button>
+    </div>
+
+    <!--====== COOKIE CONSENT BANNER ENDS ======-->
+
     <!--====== PART START ======-->
 
     <!--
@@ -2148,6 +2239,9 @@ result = kenz.register_user("partner_user_456", "user@example.com", "US")</code>
 
     <!--====== Language Switcher js ======-->
     <script src="assets/js/language-switcher.js"></script>
+
+    <!--====== Cookie Consent js ======-->
+    <script src="assets/js/cookie-consent.js"></script>
 
 </body>
 

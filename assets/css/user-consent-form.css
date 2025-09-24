@@ -1,0 +1,282 @@
+/* User Consent Form Styles */
+.user-consent-container {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+}
+
+.user-consent-container:hover {
+    border-color: #007bff;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
+}
+
+.user-consent-container.required {
+    border-color: #dc3545;
+    background: #fff5f5;
+}
+
+.user-consent-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.user-consent-header .icon {
+    width: 24px;
+    height: 24px;
+    background: #007bff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.user-consent-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.user-consent-description {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.user-consent-checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    padding: 15px;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.user-consent-checkbox-container:hover {
+    background: #f8f9fa;
+    border-color: #007bff;
+}
+
+.user-consent-checkbox-container.checked {
+    background: #e7f3ff;
+    border-color: #007bff;
+}
+
+.user-consent-checkbox {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+    accent-color: #007bff;
+}
+
+.user-consent-label {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    cursor: pointer;
+    margin: 0;
+}
+
+.user-consent-label strong {
+    color: #007bff;
+    font-weight: 600;
+}
+
+.user-consent-details {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.user-consent-details h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+.user-consent-details ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.user-consent-details li {
+    margin-bottom: 5px;
+}
+
+.user-consent-warning {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #856404;
+}
+
+.user-consent-warning .warning-icon {
+    display: inline-block;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.user-consent-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.user-consent-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.user-consent-btn.primary {
+    background: #007bff;
+    color: white;
+}
+
+.user-consent-btn.primary:hover {
+    background: #0056b3;
+}
+
+.user-consent-btn.secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.user-consent-btn.secondary:hover {
+    background: #545b62;
+}
+
+.user-consent-btn.link {
+    background: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.user-consent-btn.link:hover {
+    background: #007bff;
+    color: white;
+}
+
+.user-consent-error {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 10px;
+    display: none;
+}
+
+.user-consent-error.show {
+    display: block;
+}
+
+.user-consent-success {
+    color: #28a745;
+    font-size: 13px;
+    margin-top: 10px;
+    display: none;
+}
+
+.user-consent-success.show {
+    display: block;
+}
+
+/* RTL Support */
+[dir="rtl"] .user-consent-header {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .user-consent-checkbox-container {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .user-consent-details ul {
+    padding-right: 20px;
+    padding-left: 0;
+}
+
+[dir="rtl"] .user-consent-actions {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .user-consent-warning .warning-icon {
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .user-consent-container {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .user-consent-title {
+        font-size: 16px;
+    }
+    
+    .user-consent-checkbox-container {
+        padding: 12px;
+    }
+    
+    .user-consent-actions {
+        flex-direction: column;
+    }
+    
+    .user-consent-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Animation for form validation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.user-consent-container.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Focus states for accessibility */
+.user-consent-checkbox:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+.user-consent-btn:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}

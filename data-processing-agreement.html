@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Data Processing Agreement (DPA) - Kenz Tasks</title>
+    <meta name="description" content="Data Processing Agreement for third-party partners and network integrations">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
+
+    <!--====== Animate CSS ======-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button id="langToggle" class="lang-btn">
+            <span class="lang-text" data-en="العربية" data-ar="English">العربية</span>
+        </button>
+    </div>
+
+    <style>
+        .dpa-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .dpa-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .dpa-section {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+        
+        .dpa-section h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .dpa-section h4 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .dpa-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .dpa-table th,
+        .dpa-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .dpa-table th {
+            background: #007bff;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .dpa-table tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .download-section {
+            background: #e8f4fd;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background: #0056b3;
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        
+        .contact-info {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .compliance-badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .compliance-badge {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            min-width: 120px;
+        }
+        
+        .compliance-badge img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+        
+        .rtl-support {
+            direction: rtl;
+            text-align: right;
+        }
+        
+        .rtl-support .dpa-table th,
+        .rtl-support .dpa-table td {
+            text-align: right;
+        }
+        
+        @media (max-width: 768px) {
+            .dpa-container {
+                padding: 20px 10px;
+            }
+            
+            .dpa-section {
+                padding: 15px;
+            }
+            
+            .compliance-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+    <!--====== PRELOADER PART START ======-->
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== PRELOADER PART ENDS ======-->
+
+    <!--====== HEADER PART START ======-->
+    <header class="header-area">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="index.html">
+                                <div class="animated-logo">Kenz</div>
+                            </a>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="privacy-policy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="terms-of-service.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- DPA Content -->
+    <div class="dpa-container">
+        <div class="dpa-header">
+            <h1 data-en="Data Processing Agreement (DPA)" data-ar="اتفاقية معالجة البيانات">Data Processing Agreement (DPA)</h1>
+            <p data-en="Comprehensive data processing agreement for third-party partners and network integrations" data-ar="اتفاقية شاملة لمعالجة البيانات للشركاء الخارجيين وتكاملات الشبكة">
+                Comprehensive data processing agreement for third-party partners and network integrations
+            </p>
+            <p><strong data-en="Last Updated: 24 Sep 2025" data-ar="آخر تحديث: 24 سبتمبر 2025">Last Updated: 24 Sep 2025</strong></p>
+        </div>
+
+        <!-- Compliance Badges -->
+        <div class="compliance-badges">
+            <div class="compliance-badge">
+                <div style="font-size: 24px;">🛡️</div>
+                <strong>GDPR</strong><br>
+                <small data-en="Compliant" data-ar="متوافق">Compliant</small>
+            </div>
+            <div class="compliance-badge">
+                <div style="font-size: 24px;">🔒</div>
+                <strong>CCPA</strong><br>
+                <small data-en="Compliant" data-ar="متوافق">Compliant</small>
+            </div>
+            <div class="compliance-badge">
+                <div style="font-size: 24px;">📋</div>
+                <strong>ISO 27001</strong><br>
+                <small data-en="Aligned" data-ar="متوافق">Aligned</small>
+            </div>
+            <div class="compliance-badge">
+                <div style="font-size: 24px;">🌐</div>
+                <strong>SOC 2</strong><br>
+                <small data-en="Type II" data-ar="النوع الثاني">Type II</small>
+            </div>
+        </div>
+
+        <!-- Download Section -->
+        <div class="download-section">
+            <h3 data-en="Download DPA Templates" data-ar="تحميل قوالب اتفاقية معالجة البيانات">Download DPA Templates</h3>
+            <p data-en="Get our ready-to-use DPA templates for immediate partner integration" data-ar="احصل على قوالب اتفاقية معالجة البيانات الجاهزة للاستخدام للتكامل الفوري مع الشركاء">
+                Get our ready-to-use DPA templates for immediate partner integration
+            </p>
+            <a href="#" class="download-btn" onclick="downloadDPA('standard')" data-en="📄 Download Standard DPA" data-ar="📄 تحميل اتفاقية معالجة البيانات القياسية">📄 Download Standard DPA</a>
+            <a href="#" class="download-btn" onclick="downloadDPA('survey')" data-en="📊 Download Survey Network DPA" data-ar="📊 تحميل اتفاقية شبكة الاستطلاعات">📊 Download Survey Network DPA</a>
+            <a href="#" class="download-btn" onclick="downloadDPA('task')" data-en="⚡ Download Task Network DPA" data-ar="⚡ تحميل اتفاقية شبكة المهام">⚡ Download Task Network DPA</a>
+        </div>
+
+        <!-- Agreement Overview -->
+        <div class="dpa-section">
+            <h3 data-en="1. Agreement Overview" data-ar="1. نظرة عامة على الاتفاقية">1. Agreement Overview</h3>
+            <p data-en="This Data Processing Agreement (DPA) governs the processing of personal data by Kenz Tasks ('Data Controller') and third-party partners ('Data Processors') in accordance with applicable data protection laws including GDPR, CCPA, and other regional privacy regulations." data-ar="تحكم اتفاقية معالجة البيانات هذه معالجة البيانات الشخصية من قبل كنز تاسكس ('مراقب البيانات') والشركاء الخارجيين ('معالجي البيانات') وفقاً لقوانين حماية البيانات المعمول بها بما في ذلك GDPR وCCPA واللوائح الإقليمية الأخرى للخصوصية.">
+                This Data Processing Agreement (DPA) governs the processing of personal data by Kenz Tasks ("Data Controller") and third-party partners ("Data Processors") in accordance with applicable data protection laws including GDPR, CCPA, and other regional privacy regulations.
+            </p>
+            
+            <h4 data-en="Key Principles:" data-ar="المبادئ الأساسية:">Key Principles:</h4>
+            <ul>
+                <li data-en="Lawfulness, fairness, and transparency in data processing" data-ar="المشروعية والعدالة والشفافية في معالجة البيانات">Lawfulness, fairness, and transparency in data processing</li>
+                <li data-en="Purpose limitation - data used only for specified purposes" data-ar="تحديد الغرض - استخدام البيانات فقط للأغراض المحددة">Purpose limitation - data used only for specified purposes</li>
+                <li data-en="Data minimization - only necessary data is processed" data-ar="تقليل البيانات - معالجة البيانات الضرورية فقط">Data minimization - only necessary data is processed</li>
+                <li data-en="Accuracy and data quality maintenance" data-ar="الدقة والحفاظ على جودة البيانات">Accuracy and data quality maintenance</li>
+                <li data-en="Storage limitation with defined retention periods" data-ar="تحديد التخزين مع فترات احتفاظ محددة">Storage limitation with defined retention periods</li>
+                <li data-en="Integrity and confidentiality through security measures" data-ar="النزاهة والسرية من خلال التدابير الأمنية">Integrity and confidentiality through security measures</li>
+            </ul>
+        </div>
+
+        <!-- Data Categories -->
+        <div class="dpa-section">
+            <h3 data-en="2. Categories of Personal Data" data-ar="2. فئات البيانات الشخصية">2. Categories of Personal Data</h3>
+            
+            <table class="dpa-table">
+                <thead>
+                    <tr>
+                        <th data-en="Data Category" data-ar="فئة البيانات">Data Category</th>
+                        <th data-en="Data Types" data-ar="أنواع البيانات">Data Types</th>
+                        <th data-en="Processing Purpose" data-ar="غرض المعالجة">Processing Purpose</th>
+                        <th data-en="Retention Period" data-ar="فترة الاحتفاظ">Retention Period</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-en="Identity Data" data-ar="بيانات الهوية">Identity Data</td>
+                        <td data-en="Name, email, user ID, username" data-ar="الاسم، البريد الإلكتروني، معرف المستخدم، اسم المستخدم">Name, email, user ID, username</td>
+                        <td data-en="User identification and account management" data-ar="تحديد هوية المستخدم وإدارة الحساب">User identification and account management</td>
+                        <td data-en="Account lifetime + 3 years" data-ar="مدة الحساب + 3 سنوات">Account lifetime + 3 years</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Demographic Data" data-ar="البيانات الديموغرافية">Demographic Data</td>
+                        <td data-en="Age, gender, country, language preference" data-ar="العمر، الجنس، البلد، تفضيل اللغة">Age, gender, country, language preference</td>
+                        <td data-en="Task targeting and survey matching" data-ar="استهداف المهام ومطابقة الاستطلاعات">Task targeting and survey matching</td>
+                        <td data-en="Account lifetime + 2 years" data-ar="مدة الحساب + سنتان">Account lifetime + 2 years</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Activity Data" data-ar="بيانات النشاط">Activity Data</td>
+                        <td data-en="Task completion, timestamps, earnings, performance metrics" data-ar="إكمال المهام، الطوابع الزمنية، الأرباح، مقاييس الأداء">Task completion, timestamps, earnings, performance metrics</td>
+                        <td data-en="Payment processing and performance tracking" data-ar="معالجة المدفوعات وتتبع الأداء">Payment processing and performance tracking</td>
+                        <td data-en="7 years (financial records)" data-ar="7 سنوات (السجلات المالية)">7 years (financial records)</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Technical Data" data-ar="البيانات التقنية">Technical Data</td>
+                        <td data-en="IP address, device info, browser data, session data" data-ar="عنوان IP، معلومات الجهاز، بيانات المتصفح، بيانات الجلسة">IP address, device info, browser data, session data</td>
+                        <td data-en="Fraud prevention and system optimization" data-ar="منع الاحتيال وتحسين النظام">Fraud prevention and system optimization</td>
+                        <td data-en="2 years" data-ar="سنتان">2 years</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Payment Data" data-ar="بيانات الدفع">Payment Data</td>
+                        <td data-en="Payment method, transaction history, payout records" data-ar="طريقة الدفع، تاريخ المعاملات، سجلات الدفع">Payment method, transaction history, payout records</td>
+                        <td data-en="Payment processing and tax compliance" data-ar="معالجة المدفوعات والامتثال الضريبي">Payment processing and tax compliance</td>
+                        <td data-en="7 years (legal requirement)" data-ar="7 سنوات (متطلب قانوني)">7 years (legal requirement)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Data Processors -->
+        <div class="dpa-section">
+            <h3 data-en="3. Approved Data Processors" data-ar="3. معالجي البيانات المعتمدين">3. Approved Data Processors</h3>
+            
+            <table class="dpa-table">
+                <thead>
+                    <tr>
+                        <th data-en="Processor Name" data-ar="اسم المعالج">Processor Name</th>
+                        <th data-en="Service Type" data-ar="نوع الخدمة">Service Type</th>
+                        <th data-en="Data Categories" data-ar="فئات البيانات">Data Categories</th>
+                        <th data-en="Location" data-ar="الموقع">Location</th>
+                        <th data-en="Compliance" data-ar="الامتثال">Compliance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>OfferToro</td>
+                        <td data-en="Survey & Task Platform" data-ar="منصة الاستطلاعات والمهام">Survey & Task Platform</td>
+                        <td data-en="Identity, Demographic, Activity" data-ar="الهوية، الديموغرافية، النشاط">Identity, Demographic, Activity</td>
+                        <td data-en="United States" data-ar="الولايات المتحدة">United States</td>
+                        <td>GDPR, CCPA</td>
+                    </tr>
+                    <tr>
+                        <td>AdGate Media</td>
+                        <td data-en="Offer Wall Provider" data-ar="مزود جدار العروض">Offer Wall Provider</td>
+                        <td data-en="Identity, Activity, Technical" data-ar="الهوية، النشاط، التقنية">Identity, Activity, Technical</td>
+                        <td data-en="United States" data-ar="الولايات المتحدة">United States</td>
+                        <td>GDPR, CCPA</td>
+                    </tr>
+                    <tr>
+                        <td>CPX Research</td>
+                        <td data-en="Survey Research Platform" data-ar="منصة البحث الاستطلاعي">Survey Research Platform</td>
+                        <td data-en="Identity, Demographic" data-ar="الهوية، الديموغرافية">Identity, Demographic</td>
+                        <td data-en="Germany (EU)" data-ar="ألمانيا (الاتحاد الأوروبي)">Germany (EU)</td>
+                        <td>GDPR</td>
+                    </tr>
+                    <tr>
+                        <td>PayPal</td>
+                        <td data-en="Payment Processor" data-ar="معالج المدفوعات">Payment Processor</td>
+                        <td data-en="Identity, Payment" data-ar="الهوية، الدفع">Identity, Payment</td>
+                        <td data-en="Global" data-ar="عالمي">Global</td>
+                        <td>GDPR, CCPA, PCI DSS</td>
+                    </tr>
+                    <tr>
+                        <td>Stripe</td>
+                        <td data-en="Payment Processor" data-ar="معالج المدفوعات">Payment Processor</td>
+                        <td data-en="Identity, Payment" data-ar="الهوية، الدفع">Identity, Payment</td>
+                        <td data-en="Global" data-ar="عالمي">Global</td>
+                        <td>GDPR, CCPA, PCI DSS</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Security Measures -->
+        <div class="dpa-section">
+            <h3 data-en="4. Technical and Organizational Security Measures" data-ar="4. التدابير الأمنية التقنية والتنظيمية">4. Technical and Organizational Security Measures</h3>
+            
+            <h4 data-en="Technical Measures:" data-ar="التدابير التقنية:">Technical Measures:</h4>
+            <ul>
+                <li data-en="End-to-end encryption for data transmission (TLS 1.3)" data-ar="التشفير من طرف إلى طرف لنقل البيانات (TLS 1.3)">End-to-end encryption for data transmission (TLS 1.3)</li>
+                <li data-en="AES-256 encryption for data at rest" data-ar="تشفير AES-256 للبيانات المخزنة">AES-256 encryption for data at rest</li>
+                <li data-en="Multi-factor authentication for system access" data-ar="المصادقة متعددة العوامل للوصول إلى النظام">Multi-factor authentication for system access</li>
+                <li data-en="Regular security audits and penetration testing" data-ar="عمليات التدقيق الأمني المنتظمة واختبار الاختراق">Regular security audits and penetration testing</li>
+                <li data-en="Automated backup systems with 99.9% uptime guarantee" data-ar="أنظمة النسخ الاحتياطي الآلية مع ضمان وقت تشغيل 99.9%">Automated backup systems with 99.9% uptime guarantee</li>
+                <li data-en="Intrusion detection and prevention systems (IDS/IPS)" data-ar="أنظمة كشف ومنع التسلل (IDS/IPS)">Intrusion detection and prevention systems (IDS/IPS)</li>
+            </ul>
+            
+            <h4 data-en="Organizational Measures:" data-ar="التدابير التنظيمية:">Organizational Measures:</h4>
+            <ul>
+                <li data-en="Data Protection Officer (DPO) appointed and contactable" data-ar="تعيين مسؤول حماية البيانات (DPO) وإمكانية الاتصال به">Data Protection Officer (DPO) appointed and contactable</li>
+                <li data-en="Staff training on data protection and privacy" data-ar="تدريب الموظفين على حماية البيانات والخصوصية">Staff training on data protection and privacy</li>
+                <li data-en="Access controls with role-based permissions" data-ar="ضوابط الوصول مع الأذونات القائمة على الأدوار">Access controls with role-based permissions</li>
+                <li data-en="Incident response plan with 72-hour breach notification" data-ar="خطة الاستجابة للحوادث مع إشعار الانتهاك خلال 72 ساعة">Incident response plan with 72-hour breach notification</li>
+                <li data-en="Regular compliance audits and certifications" data-ar="عمليات التدقيق والشهادات المنتظمة للامتثال">Regular compliance audits and certifications</li>
+                <li data-en="Data retention and deletion policies" data-ar="سياسات الاحتفاظ بالبيانات وحذفها">Data retention and deletion policies</li>
+            </ul>
+        </div>
+
+        <!-- Data Subject Rights -->
+        <div class="dpa-section">
+            <h3 data-en="5. Data Subject Rights" data-ar="5. حقوق صاحب البيانات">5. Data Subject Rights</h3>
+            <p data-en="We ensure full compliance with data subject rights under GDPR, CCPA, and other applicable regulations:" data-ar="نضمن الامتثال الكامل لحقوق صاحب البيانات تحت GDPR وCCPA واللوائح الأخرى المعمول بها:">
+                We ensure full compliance with data subject rights under GDPR, CCPA, and other applicable regulations:
+            </p>
+            
+            <table class="dpa-table">
+                <thead>
+                    <tr>
+                        <th data-en="Right" data-ar="الحق">Right</th>
+                        <th data-en="Description" data-ar="الوصف">Description</th>
+                        <th data-en="Response Time" data-ar="وقت الاستجابة">Response Time</th>
+                        <th data-en="How to Exercise" data-ar="كيفية الممارسة">How to Exercise</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-en="Access" data-ar="الوصول">Access</td>
+                        <td data-en="Request copy of personal data we hold" data-ar="طلب نسخة من البيانات الشخصية التي نحتفظ بها">Request copy of personal data we hold</td>
+                        <td data-en="30 days" data-ar="30 يوماً">30 days</td>
+                        <td data-en="Email privacy@kenztasks.com" data-ar="البريد الإلكتروني privacy@kenztasks.com">Email privacy@kenztasks.com</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Rectification" data-ar="التصحيح">Rectification</td>
+                        <td data-en="Correct inaccurate personal data" data-ar="تصحيح البيانات الشخصية غير الدقيقة">Correct inaccurate personal data</td>
+                        <td data-en="30 days" data-ar="30 يوماً">30 days</td>
+                        <td data-en="Account settings or contact support" data-ar="إعدادات الحساب أو الاتصال بالدعم">Account settings or contact support</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Erasure" data-ar="المحو">Erasure</td>
+                        <td data-en="Request deletion of personal data" data-ar="طلب حذف البيانات الشخصية">Request deletion of personal data</td>
+                        <td data-en="30 days" data-ar="30 يوماً">30 days</td>
+                        <td data-en="Account deletion or email request" data-ar="حذف الحساب أو طلب عبر البريد الإلكتروني">Account deletion or email request</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Portability" data-ar="قابلية النقل">Portability</td>
+                        <td data-en="Receive data in structured format" data-ar="تلقي البيانات بتنسيق منظم">Receive data in structured format</td>
+                        <td data-en="30 days" data-ar="30 يوماً">30 days</td>
+                        <td data-en="Data export feature or email request" data-ar="ميزة تصدير البيانات أو طلب عبر البريد الإلكتروني">Data export feature or email request</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Objection" data-ar="الاعتراض">Objection</td>
+                        <td data-en="Object to processing for marketing" data-ar="الاعتراض على المعالجة للتسويق">Object to processing for marketing</td>
+                        <td data-en="Immediate" data-ar="فوري">Immediate</td>
+                        <td data-en="Unsubscribe links or account settings" data-ar="روابط إلغاء الاشتراك أو إعدادات الحساب">Unsubscribe links or account settings</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- International Transfers -->
+        <div class="dpa-section">
+            <h3 data-en="6. International Data Transfers" data-ar="6. عمليات النقل الدولية للبيانات">6. International Data Transfers</h3>
+            <p data-en="When transferring personal data outside the EEA, we ensure adequate protection through:" data-ar="عند نقل البيانات الشخصية خارج المنطقة الاقتصادية الأوروبية، نضمن الحماية الكافية من خلال:">
+                When transferring personal data outside the EEA, we ensure adequate protection through:
+            </p>
+            
+            <ul>
+                <li data-en="Standard Contractual Clauses (SCCs) approved by the European Commission" data-ar="البنود التعاقدية القياسية (SCCs) المعتمدة من المفوضية الأوروبية">Standard Contractual Clauses (SCCs) approved by the European Commission</li>
+                <li data-en="Adequacy decisions for transfers to approved countries" data-ar="قرارات الكفاية لعمليات النقل إلى البلدان المعتمدة">Adequacy decisions for transfers to approved countries</li>
+                <li data-en="Binding Corporate Rules (BCRs) where applicable" data-ar="القواعد المؤسسية الملزمة (BCRs) حيثما كان ذلك مناسباً">Binding Corporate Rules (BCRs) where applicable</li>
+                <li data-en="Certification schemes and codes of conduct" data-ar="مخططات الشهادات ومدونات السلوك">Certification schemes and codes of conduct</li>
+            </ul>
+            
+            <div class="contact-info">
+                <h4 data-en="Transfer Impact Assessment" data-ar="تقييم تأثير النقل">Transfer Impact Assessment</h4>
+                <p data-en="We conduct regular Transfer Impact Assessments (TIAs) to ensure ongoing protection of personal data in third countries, considering local laws and government access rights." data-ar="نقوم بإجراء تقييمات منتظمة لتأثير النقل (TIAs) لضمان الحماية المستمرة للبيانات الشخصية في البلدان الثالثة، مع مراعاة القوانين المحلية وحقوق الوصول الحكومية.">
+                    We conduct regular Transfer Impact Assessments (TIAs) to ensure ongoing protection of personal data in third countries, considering local laws and government access rights.
+                </p>
+            </div>
+        </div>
+
+        <!-- Breach Notification -->
+        <div class="dpa-section">
+            <h3 data-en="7. Data Breach Notification" data-ar="7. إشعار انتهاك البيانات">7. Data Breach Notification</h3>
+            
+            <h4 data-en="Notification Timeline:" data-ar="الجدول الزمني للإشعار:">Notification Timeline:</h4>
+            <ul>
+                <li data-en="Internal detection and assessment: Within 24 hours" data-ar="الكشف والتقييم الداخلي: خلال 24 ساعة">Internal detection and assessment: Within 24 hours</li>
+                <li data-en="Supervisory authority notification: Within 72 hours" data-ar="إشعار السلطة الإشرافية: خلال 72 ساعة">Supervisory authority notification: Within 72 hours</li>
+                <li data-en="Data subject notification: Without undue delay (if high risk)" data-ar="إشعار صاحب البيانات: دون تأخير لا مبرر له (في حالة المخاطر العالية)">Data subject notification: Without undue delay (if high risk)</li>
+                <li data-en="Partner notification: Within 48 hours" data-ar="إشعار الشريك: خلال 48 ساعة">Partner notification: Within 48 hours</li>
+            </ul>
+            
+            <h4 data-en="Breach Response Process:" data-ar="عملية الاستجابة للانتهاك:">Breach Response Process:</h4>
+            <ol>
+                <li data-en="Immediate containment and damage assessment" data-ar="الاحتواء الفوري وتقييم الأضرار">Immediate containment and damage assessment</li>
+                <li data-en="Risk evaluation and impact analysis" data-ar="تقييم المخاطر وتحليل التأثير">Risk evaluation and impact analysis</li>
+                <li data-en="Notification to relevant authorities and stakeholders" data-ar="الإشعار للسلطات وأصحاب المصلحة ذات الصلة">Notification to relevant authorities and stakeholders</li>
+                <li data-en="Implementation of remedial measures" data-ar="تنفيذ التدابير العلاجية">Implementation of remedial measures</li>
+                <li data-en="Post-incident review and process improvement" data-ar="مراجعة ما بعد الحادث وتحسين العملية">Post-incident review and process improvement</li>
+            </ol>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="dpa-section">
+            <h3 data-en="8. Contact Information" data-ar="8. معلومات الاتصال">8. Contact Information</h3>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 data-en="Data Controller" data-ar="مراقب البيانات">Data Controller</h4>
+                    <p>
+                        <strong>Kenz Tasks</strong><br>
+                        <span data-en="Email: legal@kenztasks.com" data-ar="البريد الإلكتروني: legal@kenztasks.com">Email: legal@kenztasks.com</span><br>
+                        <span data-en="Phone: +1 (555) 123-4567" data-ar="الهاتف: +1 (555) 123-4567">Phone: +1 (555) 123-4567</span><br>
+                        <span data-en="Address: 123 Business Ave, Suite 100, City, State 12345" data-ar="العنوان: 123 شارع الأعمال، جناح 100، المدينة، الولاية 12345">Address: 123 Business Ave, Suite 100, City, State 12345</span>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h4 data-en="Data Protection Officer" data-ar="مسؤول حماية البيانات">Data Protection Officer</h4>
+                    <p>
+                        <span data-en="Email: dpo@kenztasks.com" data-ar="البريد الإلكتروني: dpo@kenztasks.com">Email: dpo@kenztasks.com</span><br>
+                        <span data-en="Phone: +1 (555) 123-4568" data-ar="الهاتف: +1 (555) 123-4568">Phone: +1 (555) 123-4568</span><br>
+                        <span data-en="Response Time: 48 hours" data-ar="وقت الاستجابة: 48 ساعة">Response Time: 48 hours</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <h4 data-en="For Partner DPA Requests" data-ar="لطلبات اتفاقية معالجة البيانات للشركاء">For Partner DPA Requests</h4>
+                <p data-en="Partners requiring customized DPA agreements should contact our legal team at partnerships@kenztasks.com with their specific requirements and compliance needs." data-ar="يجب على الشركاء الذين يحتاجون إلى اتفاقيات معالجة بيانات مخصصة الاتصال بفريقنا القانوني على partnerships@kenztasks.com مع متطلباتهم المحددة واحتياجات الامتثال.">
+                    Partners requiring customized DPA agreements should contact our legal team at partnerships@kenztasks.com with their specific requirements and compliance needs.
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="dpa-section">
+            <div class="text-center">
+                <p data-en="This DPA is effective as of 24 Sep 2025 and supersedes all previous versions." data-ar="تسري هذه الاتفاقية اعتباراً من 24 سبتمبر 2025 وتحل محل جميع الإصدارات السابقة.">
+                    This DPA is effective as of 24 Sep 2025 and supersedes all previous versions.
+                </p>
+                <p data-en="© 2025 Kenz Tasks. All rights reserved." data-ar="© 2025 كنز تاسكس. جميع الحقوق محفوظة.">© 2025 Kenz Tasks. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--====== Jquery js ======-->
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!--====== WOW js ======-->
+    <script src="assets/js/wow.min.js"></script>
+
+    <!--====== Main js ======-->
+    <script src="assets/js/main.js"></script>
+
+    <!--====== Language Switcher js ======-->
+    <script src="assets/js/language-switcher.js"></script>
+
+    <script>
+        // DPA Download functionality
+        function downloadDPA(type) {
+            const dpaTemplates = {
+                standard: {
+                    filename: 'Kenz_Tasks_Standard_DPA.pdf',
+                    content: generateStandardDPA()
+                },
+                survey: {
+                    filename: 'Kenz_Tasks_Survey_Network_DPA.pdf',
+                    content: generateSurveyDPA()
+                },
+                task: {
+                    filename: 'Kenz_Tasks_Task_Network_DPA.pdf',
+                    content: generateTaskDPA()
+                }
+            };
+
+            const template = dpaTemplates[type];
+            if (template) {
+                // Create downloadable content
+                const blob = new Blob([template.content], { type: 'text/plain' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = template.filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+                
+                // Track download
+                console.log(`DPA Template Downloaded: ${type}`);
+            }
+        }
+
+        function generateStandardDPA() {
+            return `DATA PROCESSING AGREEMENT (DPA)
+KENZ TASKS - STANDARD TEMPLATE
+
+This Data Processing Agreement ("DPA") is entered into between Kenz Tasks ("Data Controller") and [PARTNER NAME] ("Data Processor").
+
+ARTICLE 1: DEFINITIONS AND SCOPE
+1.1 This DPA governs the processing of Personal Data by the Data Processor on behalf of the Data Controller.
+1.2 Terms used in this DPA have the meanings set forth in applicable data protection laws.
+
+ARTICLE 2: DATA PROCESSING DETAILS
+2.1 Categories of Personal Data: Identity data, demographic data, activity data, technical data
+2.2 Categories of Data Subjects: Platform users, task participants
+2.3 Processing Purposes: Task completion tracking, payment processing, fraud prevention
+
+ARTICLE 3: SECURITY MEASURES
+3.1 The Data Processor shall implement appropriate technical and organizational measures.
+3.2 Measures include encryption, access controls, and regular security assessments.
+
+ARTICLE 4: DATA SUBJECT RIGHTS
+4.1 The Data Processor shall assist the Data Controller in responding to data subject requests.
+4.2 Response time: 30 days maximum for all requests.
+
+ARTICLE 5: DATA BREACH NOTIFICATION
+5.1 The Data Processor shall notify the Data Controller within 24 hours of becoming aware of a breach.
+5.2 Notification shall include all relevant details and remedial measures taken.
+
+ARTICLE 6: INTERNATIONAL TRANSFERS
+6.1 Data transfers outside the EEA require appropriate safeguards.
+6.2 Standard Contractual Clauses or adequacy decisions must be in place.
+
+ARTICLE 7: AUDIT RIGHTS
+7.1 The Data Controller may audit the Data Processor's compliance annually.
+7.2 Audit costs shall be borne by the Data Controller unless non-compliance is found.
+
+ARTICLE 8: LIABILITY AND INDEMNIFICATION
+8.1 Each party is liable for damages caused by its breach of this DPA.
+8.2 Liability is limited to direct damages up to the contract value.
+
+ARTICLE 9: TERM AND TERMINATION
+9.1 This DPA remains in effect for the duration of the main service agreement.
+9.2 Upon termination, all Personal Data must be returned or deleted within 30 days.
+
+ARTICLE 10: GOVERNING LAW
+10.1 This DPA is governed by the laws of [JURISDICTION].
+10.2 Disputes shall be resolved through binding arbitration.
+
+Date: _______________
+Data Controller: Kenz Tasks
+Data Processor: [PARTNER NAME]
+
+Signatures:
+_________________    _________________
+Data Controller      Data Processor`;
+        }
+
+        function generateSurveyDPA() {
+            return `DATA PROCESSING AGREEMENT (DPA)
+KENZ TASKS - SURVEY NETWORK TEMPLATE
+
+This specialized DPA governs survey data processing between Kenz Tasks and survey network partners.
+
+ARTICLE 1: SURVEY-SPECIFIC PROCESSING
+1.1 Survey response data processing for research and analytics
+1.2 Demographic matching for survey targeting
+1.3 Quality assurance and fraud detection
+
+ARTICLE 2: DATA CATEGORIES FOR SURVEYS
+2.1 Survey responses and completion data
+2.2 Demographic profiling information
+2.3 Survey participation history
+2.4 Quality scores and fraud indicators
+
+ARTICLE 3: SURVEY PARTICIPANT RIGHTS
+3.1 Right to withdraw from surveys at any time
+3.2 Right to access survey data collected
+3.3 Right to delete survey participation history
+
+ARTICLE 4: SURVEY DATA RETENTION
+4.1 Survey responses: 3 years after completion
+4.2 Demographic data: Account lifetime + 2 years
+4.3 Quality data: 5 years for fraud prevention
+
+ARTICLE 5: SURVEY NETWORK COMPLIANCE
+5.1 Compliance with market research industry standards
+5.2 ESOMAR guidelines adherence required
+5.3 Regular compliance audits and certifications
+
+[Additional survey-specific clauses...]
+
+Date: _______________
+Survey Network Partner: [PARTNER NAME]
+Kenz Tasks Representative: _______________`;
+        }
+
+        function generateTaskDPA() {
+            return `DATA PROCESSING AGREEMENT (DPA)
+KENZ TASKS - TASK NETWORK TEMPLATE
+
+This DPA governs task completion data processing between Kenz Tasks and task network partners.
+
+ARTICLE 1: TASK-SPECIFIC PROCESSING
+1.1 Task completion tracking and verification
+1.2 Performance metrics and quality scoring
+1.3 Payment processing and earnings calculation
+
+ARTICLE 2: TASK DATA CATEGORIES
+2.1 Task completion timestamps and duration
+2.2 Task quality scores and ratings
+2.3 User performance metrics
+2.4 Payment and earnings data
+
+ARTICLE 3: TASK NETWORK OBLIGATIONS
+3.1 Accurate task completion reporting
+3.2 Fraud detection and prevention measures
+3.3 Quality assurance protocols
+
+ARTICLE 4: TASK DATA SECURITY
+4.1 Secure API endpoints for data transmission
+4.2 Real-time data validation and verification
+4.3 Encrypted storage of task completion data
+
+ARTICLE 5: TASK NETWORK COMPLIANCE
+5.1 Industry-standard task verification protocols
+5.2 Anti-fraud measures and detection systems
+5.3 Regular security assessments and updates
+
+[Additional task-specific clauses...]
+
+Date: _______________
+Task Network Partner: [PARTNER NAME]
+Kenz Tasks Representative: _______________`;
+        }
+    </script>
+
+</body>
+
+</html>

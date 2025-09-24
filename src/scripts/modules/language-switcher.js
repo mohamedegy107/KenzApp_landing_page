@@ -131,7 +131,7 @@ class LanguageSwitcher {
             'services.title': 'Our Services',
             'services.subtitle': 'Discover various ways to earn money',
             'about.title': 'How KenzApp Works',
-            'footer.copyright': '© 2024 KenzApp. All rights reserved.'
+            'footer.copyright': '© 2025 KenzApp. All rights reserved.'
         };
 
         // Arabic translations
@@ -147,7 +147,7 @@ class LanguageSwitcher {
             'services.title': 'خدماتنا',
             'services.subtitle': 'اكتشف طرق مختلفة لكسب المال',
             'about.title': 'كيف يعمل كينز آب',
-            'footer.copyright': '© 2024 كينز آب. جميع الحقوق محفوظة.'
+            'footer.copyright': '© 2025 كينز آب. جميع الحقوق محفوظة.'
         };
 
         // Try to load additional translations from external files

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>User Consent Form Demo - Kenz Tasks</title>
+    <meta name="description" content="Demonstration of user consent form for third-party data sharing compliance">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
+
+    <!--====== Animate CSS ======-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!--====== User Consent Form CSS ======-->
+    <link rel="stylesheet" href="assets/css/user-consent-form.css">
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button id="langToggle" class="lang-btn">
+            <span class="lang-text" data-en="العربية" data-ar="English">العربية</span>
+        </button>
+    </div>
+</head>
+
+<body>
+    <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+    <!--====== PRELOADER PART START ======-->
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== PRELOADER PART ENDS ======-->
+
+    <!--====== HEADER PART START ======-->
+    <header class="header-area">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="index.html">
+                                <div class="animated-logo">Kenz</div>
+                            </a>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a href="index.html" data-en="Back to Home" data-ar="العودة للرئيسية">Back to
+                                            Home</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- User Consent Demo Content -->
+    <section class="pt-120 pb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center pb-30">
+                        <h3 class="title" data-en="User Consent Form Demo" data-ar="عرض توضيحي لنموذج موافقة المستخدم">User Consent Form Demo</h3>
+                        <p class="text" data-en="Demonstration of compliance-ready user consent forms for third-party data sharing" data-ar="عرض توضيحي لنماذج موافقة المستخدم الجاهزة للامتثال لمشاركة البيانات مع أطراف ثالثة">
+                            Demonstration of compliance-ready user consent forms for third-party data sharing
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <!-- Demo Form -->
+                    <form id="demoForm" class="consent-demo-form">
+                        <div class="form-section mb-40">
+                            <h4 data-en="Task Registration Form" data-ar="نموذج تسجيل المهمة">Task Registration Form</h4>
+                            <p data-en="This form demonstrates how user consent is integrated into task registration processes." data-ar="يوضح هذا النموذج كيفية دمج موافقة المستخدم في عمليات تسجيل المهام.">
+                                This form demonstrates how user consent is integrated into task registration processes.
+                            </p>
+                            
+                            <!-- Basic Form Fields -->
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="userEmail" data-en="Email Address" data-ar="عنوان البريد الإلكتروني">Email Address</label>
+                                    <input type="email" class="form-control" id="userEmail" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="userName" data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
+                                    <input type="text" class="form-control" id="userName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="userCountry" data-en="Country" data-ar="البلد">Country</label>
+                                    <select class="form-control" id="userCountry" required>
+                                        <option value="">Select Country</option>
+                                        <option value="US">United States</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="UK">United Kingdom</option>
+                                        <option value="AU">Australia</option>
+                                        <option value="DE">Germany</option>
+                                        <option value="FR">France</option>
+                                        <option value="SA">Saudi Arabia</option>
+                                        <option value="AE">United Arab Emirates</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="userAge" data-en="Age" data-ar="العمر">Age</label>
+                                    <input type="number" class="form-control" id="userAge" min="18" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- User Consent Form - Third Party Data Sharing -->
+                        <div class="user-consent-container">
+                            <div class="user-consent-header">
+                                <div class="icon">🔒</div>
+                                <h3 class="user-consent-title" data-en="Third-Party Data Sharing Consent" data-ar="موافقة مشاركة البيانات مع أطراف ثالثة">Third-Party Data Sharing Consent</h3>
+                            </div>
+                            
+                            <p class="user-consent-description" data-en="We need your explicit consent before sharing your data with approved third-party networks for task completion and payment processing." data-ar="نحتاج موافقتك الصريحة قبل مشاركة بياناتك مع الشبكات الخارجية المعتمدة لإكمال المهام ومعالجة المدفوعات.">
+                                We need your explicit consent before sharing your data with approved third-party networks for task completion and payment processing.
+                            </p>
+                            
+                            <div class="user-consent-checkbox-container">
+                                <input type="checkbox" 
+                                       class="user-consent-checkbox" 
+                                       id="consent_third_party_sharing" 
+                                       value="third_party_sharing"
+                                       required>
+                                <label for="consent_third_party_sharing" class="user-consent-label">
+                                    <strong data-en="I consent to sharing my data" data-ar="أوافق على مشاركة بياناتي">I consent to sharing my data</strong>
+                                    <span data-en="with approved third-party networks for task completion and payment processing." data-ar="مع الشبكات الخارجية المعتمدة لإكمال المهام ومعالجة المدفوعات.">with approved third-party networks for task completion and payment processing.</span>
+                                </label>
+                            </div>
+                            
+                            <div class="user-consent-details">
+                                <h4 data-en="What data will be shared:" data-ar="البيانات التي سيتم مشاركتها:">What data will be shared:</h4>
+                                <ul>
+                                    <li data-en="User ID and profile information" data-ar="معرف المستخدم ومعلومات الملف الشخصي">User ID and profile information</li>
+                                    <li data-en="Task completion status and timestamps" data-ar="حالة إكمال المهام والأوقات">Task completion status and timestamps</li>
+                                    <li data-en="Payment and earnings data" data-ar="بيانات الدفع والأرباح">Payment and earnings data</li>
+                                    <li data-en="Device and browser information" data-ar="معلومات الجهاز والمتصفح">Device and browser information</li>
+                                    <li data-en="Demographic information (age, country, language)" data-ar="المعلومات الديموغرافية (العمر، البلد، اللغة)">Demographic information (age, country, language)</li>
+                                </ul>
+                                
+                                <h4 data-en="Approved third-party networks:" data-ar="الشبكات الخارجية المعتمدة:">Approved third-party networks:</h4>
+                                <ul>
+                                    <li>OfferToro - Survey and task completion tracking</li>
+                                    <li>AdGate Media - Offer wall and reward processing</li>
+                                    <li>CPX Research - Survey completion verification</li>
+                                    <li>Payment processors (PayPal, Stripe) - Payment processing</li>
+                                </ul>
+                                
+                                <div class="user-consent-warning">
+                                    <span class="warning-icon">⚠️</span>
+                                    <span data-en="You can withdraw this consent at any time. Withdrawal may affect your ability to participate in certain tasks." data-ar="يمكنك سحب هذه الموافقة في أي وقت. قد يؤثر السحب على قدرتك على المشاركة في مهام معينة.">You can withdraw this consent at any time. Withdrawal may affect your ability to participate in certain tasks.</span>
+                                </div>
+                            </div>
+                            
+                            <div class="user-consent-actions">
+                                <a href="privacy-policy.html" target="_blank" class="user-consent-btn link privacy-policy-link" data-en="View Privacy Policy" data-ar="عرض سياسة الخصوصية">View Privacy Policy</a>
+                                <button type="button" class="user-consent-btn secondary withdraw-consent-btn" data-en="Withdraw Consent" data-ar="سحب الموافقة">Withdraw Consent</button>
+                            </div>
+                            
+                            <div class="user-consent-error" data-en="Please provide your consent to continue." data-ar="يرجى تقديم موافقتك للمتابعة.">Please provide your consent to continue.</div>
+                            <div class="user-consent-success" data-en="Consent saved successfully!" data-ar="تم حفظ الموافقة بنجاح!">Consent saved successfully!</div>
+                        </div>
+
+                        <!-- Survey Participation Consent -->
+                        <div class="user-consent-container">
+                            <div class="user-consent-header">
+                                <div class="icon">📊</div>
+                                <h3 class="user-consent-title" data-en="Survey Participation Consent" data-ar="موافقة المشاركة في الاستطلاعات">Survey Participation Consent</h3>
+                            </div>
+                            
+                            <p class="user-consent-description" data-en="Optional: Consent to participate in surveys and research studies for additional earning opportunities." data-ar="اختياري: الموافقة على المشاركة في الاستطلاعات والدراسات البحثية لفرص ربح إضافية.">
+                                Optional: Consent to participate in surveys and research studies for additional earning opportunities.
+                            </p>
+                            
+                            <div class="user-consent-checkbox-container">
+                                <input type="checkbox" 
+                                       class="user-consent-checkbox" 
+                                       id="consent_survey_participation" 
+                                       value="survey_participation">
+                                <label for="consent_survey_participation" class="user-consent-label">
+                                    <strong data-en="I consent to participate in surveys" data-ar="أوافق على المشاركة في الاستطلاعات">I consent to participate in surveys</strong>
+                                    <span data-en="and research studies provided by our partner networks." data-ar="والدراسات البحثية المقدمة من شبكاتنا الشريكة.">and research studies provided by our partner networks.</span>
+                                </label>
+                            </div>
+                            
+                            <div class="user-consent-success" data-en="Survey consent saved!" data-ar="تم حفظ موافقة الاستطلاع!">Survey consent saved!</div>
+                        </div>
+
+                        <!-- Marketing Communications Consent -->
+                        <div class="user-consent-container">
+                            <div class="user-consent-header">
+                                <div class="icon">📧</div>
+                                <h3 class="user-consent-title" data-en="Marketing Communications" data-ar="الاتصالات التسويقية">Marketing Communications</h3>
+                            </div>
+                            
+                            <p class="user-consent-description" data-en="Optional: Receive updates about new tasks, promotions, and platform features." data-ar="اختياري: تلقي تحديثات حول المهام الجديدة والعروض الترويجية وميزات المنصة.">
+                                Optional: Receive updates about new tasks, promotions, and platform features.
+                            </p>
+                            
+                            <div class="user-consent-checkbox-container">
+                                <input type="checkbox" 
+                                       class="user-consent-checkbox" 
+                                       id="consent_marketing" 
+                                       value="marketing_communications">
+                                <label for="consent_marketing" class="user-consent-label">
+                                    <strong data-en="I consent to receive marketing communications" data-ar="أوافق على تلقي الاتصالات التسويقية">I consent to receive marketing communications</strong>
+                                    <span data-en="via email and in-app notifications." data-ar="عبر البريد الإلكتروني والإشعارات داخل التطبيق.">via email and in-app notifications.</span>
+                                </label>
+                            </div>
+                            
+                            <div class="user-consent-success" data-en="Marketing preferences saved!" data-ar="تم حفظ تفضيلات التسويق!">Marketing preferences saved!</div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="form-actions mt-40">
+                            <button type="submit" class="btn btn-primary btn-lg" data-en="Register for Tasks" data-ar="التسجيل للمهام">Register for Tasks</button>
+                            <button type="button" class="btn btn-secondary btn-lg ml-3" onclick="resetForm()" data-en="Reset Form" data-ar="إعادة تعيين النموذج">Reset Form</button>
+                        </div>
+
+                        <!-- Compliance Information -->
+                        <div class="compliance-info mt-40 p-4" style="background: #f8f9fa; border-radius: 8px; border-left: 4px solid #007bff;">
+                            <h5 data-en="Compliance Information" data-ar="معلومات الامتثال">Compliance Information</h5>
+                            <p data-en="This form demonstrates GDPR, CCPA, and industry-standard compliance for user consent management. All consent choices are logged with timestamps and can be withdrawn at any time." data-ar="يوضح هذا النموذج امتثال GDPR وCCPA والمعايير الصناعية لإدارة موافقة المستخدم. يتم تسجيل جميع خيارات الموافقة مع الطوابع الزمنية ويمكن سحبها في أي وقت.">
+                                This form demonstrates GDPR, CCPA, and industry-standard compliance for user consent management. All consent choices are logged with timestamps and can be withdrawn at any time.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Area -->
+    <footer id="footer" class="footer-area pt-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-copyright">
+                        <div class="copyright d-sm-flex justify-content-between">
+                            <div class="copyright-text text-center">
+                                <p class="text" data-en="© 2025 Kenz. All rights reserved."
+                                    data-ar="© 2025 كنز. جميع الحقوق محفوظة.">© 2025 Kenz. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--====== Jquery js ======-->
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!--====== WOW js ======-->
+    <script src="assets/js/wow.min.js"></script>
+
+    <!--====== Scrolling Nav js ======-->
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/scrolling-nav.js"></script>
+
+    <!--====== Main js ======-->
+    <script src="assets/js/main.js"></script>
+
+    <!--====== Language Switcher js ======-->
+    <script src="assets/js/language-switcher.js"></script>
+
+    <!--====== User Consent Form js ======-->
+    <script src="assets/js/user-consent-form.js"></script>
+
+    <script>
+        // Demo-specific functionality
+        function resetForm() {
+            document.getElementById('demoForm').reset();
+            
+            // Reset consent checkboxes and UI state
+            document.querySelectorAll('.user-consent-checkbox').forEach(checkbox => {
+                checkbox.checked = false;
+                const container = checkbox.closest('.user-consent-checkbox-container');
+                if (container) {
+                    container.classList.remove('checked');
+                }
+            });
+            
+            // Clear any error/success messages
+            document.querySelectorAll('.user-consent-error, .user-consent-success').forEach(msg => {
+                msg.classList.remove('show');
+            });
+            
+            // Clear stored consent
+            localStorage.removeItem('kenz_user_data_consent');
+            localStorage.removeItem('kenz_user_consent_timestamp');
+            
+            alert('Form and consent data have been reset.');
+        }
+
+        // Form submission handler
+        document.getElementById('demoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Check if required consent is given
+            const requiredConsent = document.getElementById('consent_third_party_sharing');
+            if (!requiredConsent.checked) {
+                alert('Please provide consent for third-party data sharing to continue.');
+                return;
+            }
+            
+            // Simulate successful registration
+            alert('Demo registration successful! In a real implementation, this would register the user with the provided consent preferences.');
+        });
+    </script>
+
+</body>
+
+</html>
