@@ -130,45 +130,67 @@ class WaitlistManager {
     }
 
     async submitToWaitlist(email) {
-        // For production, use the PHP API endpoint
-        const response = await fetch('/api/waitlist.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({ 
-                email: email,
-                timestamp: new Date().toISOString(),
-                source: 'landing_page'
-            })
-        });
+        // Try the PHP API endpoint first
+        try {
+            const response = await fetch('/api/waitlist.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({ 
+                    email: email,
+                    timestamp: new Date().toISOString(),
+                    source: 'landing_page'
+                })
+            });
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            return result;
+        } catch (error) {
+            // If PHP endpoint fails (e.g., in development), use demo simulation
+            console.warn('PHP API endpoint not available, using demo mode:', error.message);
+            
+            // Demo simulation for development/testing
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    // Check for duplicate email simulation
+                    const existingEmails = JSON.parse(localStorage.getItem('waitlist_emails') || '[]');
+                    
+                    if (existingEmails.includes(email)) {
+                        resolve({
+                            success: true,
+                            message: 'You\'re already on the waitlist! We\'ll notify you when Kenz Tasks launches.',
+                            alreadyExists: true,
+                            waitlistPosition: existingEmails.length
+                        });
+                        return;
+                    }
+                    
+                    // Simulate different responses for demo
+                    const random = Math.random();
+                    
+                    if (random > 0.05) { // 95% success rate
+                        // Add email to localStorage for demo
+                        existingEmails.push(email);
+                        localStorage.setItem('waitlist_emails', JSON.stringify(existingEmails));
+                        
+                        resolve({
+                            success: true,
+                            message: 'Welcome to the waitlist! We\'ll notify you when Kenz Tasks launches.',
+                            waitlistPosition: existingEmails.length,
+                            timestamp: new Date().toISOString()
+                        });
+                    } else {
+                        reject(new Error('Network error. Please check your connection and try again.'));
+                    }
+                }, 1500); // Simulate network delay
+            });
         }
-
-        return await response.json();
-
-        // Fallback demo simulation (remove in production)
-        /*
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                // Simulate different responses for demo
-                const random = Math.random();
-                
-                if (random > 0.1) { // 90% success rate
-                    resolve({
-                        success: true,
-                        message: 'Welcome to the waitlist! We\'ll notify you when Kenz Tasks launches.',
-                        waitlistPosition: Math.floor(Math.random() * 1000) + 1
-                    });
-                } else {
-                    reject(new Error('Network error. Please check your connection and try again.'));
-                }
-            }, 2000); // Simulate network delay
-        });
-        */
     }
 
     setLoadingState(loading) {

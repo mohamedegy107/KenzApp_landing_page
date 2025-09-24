@@ -163,6 +163,6 @@
     "use_case": "Demonstrates comprehensive tracking for survey completion",
     "compliance_notes": "Includes GDPR/CCPA consent tracking and user privacy protection",
     "integration_guide": "https://docs.kenztasks.com/api/postbacks",
-    "contact": "partnerships@kenztasks.com"
+    "contact": "partners@kenztasks.com"
   }
 }
