@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages Waitlist Demo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+        h1 { color: #fff; text-align: center; }
+        h2 { color: #f0f0f0; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px; }
+        .status { 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin: 15px 0;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .success { background: rgba(76, 175, 80, 0.3); }
+        .info { background: rgba(33, 150, 243, 0.3); }
+        .warning { background: rgba(255, 193, 7, 0.3); }
+        button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 5px;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        button:hover { transform: translateY(-2px); }
+        .email-list {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        input {
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            margin: 10px 5px;
+            width: 250px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+        }
+        .demo-form {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 GitHub Pages Waitlist Demo</h1>
+        
+        <div class="status info">
+            <strong>ℹ️ GitHub Pages Information:</strong><br>
+            Since GitHub Pages only serves static files (HTML, CSS, JS), the PHP backend won't work. 
+            The waitlist form automatically switches to demo mode using localStorage.
+        </div>
+
+        <h2>📧 Test the Waitlist Form</h2>
+        <div class="demo-form">
+            <input type="email" id="testEmail" placeholder="Enter test email" value="test@example.com">
+            <button onclick="testWaitlist()">Test Waitlist Signup</button>
+        </div>
+
+        <h2>📊 Current Waitlist Status</h2>
+        <button onclick="showWaitlistData()">Show Stored Emails</button>
+        <button onclick="clearWaitlistData()">Clear All Data</button>
+        <button onclick="addSampleData()">Add Sample Data</button>
+        
+        <div id="waitlistDisplay" class="email-list"></div>
+
+        <h2>🔧 Technical Details</h2>
+        <div class="status">
+            <strong>How it works:</strong>
+            <ul>
+                <li>The JavaScript tries to call <code>/api/waitlist.php</code> first</li>
+                <li>When that fails (on GitHub Pages), it automatically switches to demo mode</li>
+                <li>Demo mode stores emails in browser's localStorage</li>
+                <li>Each email gets a position number and timestamp</li>
+                <li>Duplicate emails are detected and handled</li>
+            </ul>
+        </div>
+
+        <div class="status warning">
+            <strong>⚠️ Important Notes:</strong>
+            <ul>
+                <li>This is a demo mode - emails are only stored locally in your browser</li>
+                <li>Data will be lost when you clear browser data</li>
+                <li>For production, you'd need a backend service (not PHP on GitHub Pages)</li>
+                <li>Consider alternatives like Netlify Forms, Formspree, or Firebase</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function testWaitlist() {
+            const email = document.getElementById('testEmail').value;
+            if (!email) {
+                alert('Please enter an email address');
+                return;
+            }
+
+            // Simulate the waitlist signup process
+            const existingEmails = JSON.parse(localStorage.getItem('waitlist_emails') || '[]');
+            
+            if (existingEmails.includes(email)) {
+                alert(`Email ${email} is already on the waitlist at position #${existingEmails.indexOf(email) + 1}`);
+                return;
+            }
+
+            existingEmails.push(email);
+            localStorage.setItem('waitlist_emails', JSON.stringify(existingEmails));
+
+            const waitlistData = JSON.parse(localStorage.getItem('waitlist_data') || '{}');
+            waitlistData[email] = {
+                timestamp: new Date().toISOString(),
+                source: 'github_pages_demo',
+                position: existingEmails.length
+            };
+            localStorage.setItem('waitlist_data', JSON.stringify(waitlistData));
+
+            alert(`✅ Success! ${email} added to waitlist at position #${existingEmails.length}`);
+            showWaitlistData();
+        }
+
+        function showWaitlistData() {
+            const emails = JSON.parse(localStorage.getItem('waitlist_emails') || '[]');
+            const data = JSON.parse(localStorage.getItem('waitlist_data') || '{}');
+            const display = document.getElementById('waitlistDisplay');
+
+            if (emails.length === 0) {
+                display.innerHTML = '<p>No emails in waitlist yet. Try adding some!</p>';
+                return;
+            }
+
+            let html = `<h3>📋 Waitlist (${emails.length} emails)</h3>`;
+            emails.forEach((email, index) => {
+                const emailData = data[email] || {};
+                const timestamp = emailData.timestamp ? new Date(emailData.timestamp).toLocaleString() : 'Unknown';
+                html += `<div style="margin: 8px 0; padding: 8px; background: rgba(255,255,255,0.1); border-radius: 5px;">
+                    <strong>#${index + 1}</strong> - ${email}<br>
+                    <small>Added: ${timestamp}</small>
+                </div>`;
+            });
+            display.innerHTML = html;
+        }
+
+        function clearWaitlistData() {
+            if (confirm('Are you sure you want to clear all waitlist data?')) {
+                localStorage.removeItem('waitlist_emails');
+                localStorage.removeItem('waitlist_data');
+                document.getElementById('waitlistDisplay').innerHTML = '<p>✅ All waitlist data cleared!</p>';
+            }
+        }
+
+        function addSampleData() {
+            const sampleEmails = [
+                'john.doe@example.com',
+                'jane.smith@example.com',
+                'alex.johnson@example.com',
+                'sarah.wilson@example.com'
+            ];
+
+            const existingEmails = JSON.parse(localStorage.getItem('waitlist_emails') || '[]');
+            const waitlistData = JSON.parse(localStorage.getItem('waitlist_data') || '{}');
+
+            sampleEmails.forEach(email => {
+                if (!existingEmails.includes(email)) {
+                    existingEmails.push(email);
+                    waitlistData[email] = {
+                        timestamp: new Date(Date.now() - Math.random() * 7 * 24 * 60 * 60 * 1000).toISOString(),
+                        source: 'sample_data',
+                        position: existingEmails.length
+                    };
+                }
+            });
+
+            localStorage.setItem('waitlist_emails', JSON.stringify(existingEmails));
+            localStorage.setItem('waitlist_data', JSON.stringify(waitlistData));
+            
+            showWaitlistData();
+        }
+
+        // Show data on page load
+        showWaitlistData();
+    </script>
+</body>
+</html>

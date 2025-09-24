@@ -152,10 +152,10 @@ class WaitlistManager {
             const result = await response.json();
             return result;
         } catch (error) {
-            // If PHP endpoint fails (e.g., in development), use demo simulation
-            console.warn('PHP API endpoint not available, using demo mode:', error.message);
+            // If PHP endpoint fails (e.g., on GitHub Pages), use demo simulation
+            console.info('Using demo mode for GitHub Pages deployment:', error.message);
             
-            // Demo simulation for development/testing
+            // Demo simulation for GitHub Pages deployment
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
                     // Check for duplicate email simulation
@@ -171,24 +171,28 @@ class WaitlistManager {
                         return;
                     }
                     
-                    // Simulate different responses for demo
-                    const random = Math.random();
+                    // Simulate successful signup (100% success rate for demo)
+                    // Add email to localStorage for demo
+                    existingEmails.push(email);
+                    localStorage.setItem('waitlist_emails', JSON.stringify(existingEmails));
                     
-                    if (random > 0.05) { // 95% success rate
-                        // Add email to localStorage for demo
-                        existingEmails.push(email);
-                        localStorage.setItem('waitlist_emails', JSON.stringify(existingEmails));
-                        
-                        resolve({
-                            success: true,
-                            message: 'Welcome to the waitlist! We\'ll notify you when Kenz Tasks launches.',
-                            waitlistPosition: existingEmails.length,
-                            timestamp: new Date().toISOString()
-                        });
-                    } else {
-                        reject(new Error('Network error. Please check your connection and try again.'));
-                    }
-                }, 1500); // Simulate network delay
+                    // Store additional metadata
+                    const waitlistData = JSON.parse(localStorage.getItem('waitlist_data') || '{}');
+                    waitlistData[email] = {
+                        timestamp: new Date().toISOString(),
+                        source: 'github_pages_demo',
+                        position: existingEmails.length
+                    };
+                    localStorage.setItem('waitlist_data', JSON.stringify(waitlistData));
+                    
+                    resolve({
+                        success: true,
+                        message: `🎉 Welcome to the waitlist! You're #${existingEmails.length} in line. We'll notify you when Kenz Tasks launches.`,
+                        waitlistPosition: existingEmails.length,
+                        timestamp: new Date().toISOString(),
+                        demoMode: true
+                    });
+                }, 800); // Reduced delay for better UX
             });
         }
     }

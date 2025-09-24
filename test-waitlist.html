@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waitlist Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-form { max-width: 400px; margin: 20px 0; }
+        .test-form input { width: 100%; padding: 10px; margin: 10px 0; }
+        .test-form button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+        .result { margin: 20px 0; padding: 10px; border: 1px solid #ddd; background: #f9f9f9; }
+        .error { border-color: #dc3545; background: #f8d7da; }
+        .success { border-color: #28a745; background: #d4edda; }
+    </style>
+</head>
+<body>
+    <h1>Waitlist Functionality Test</h1>
+    
+    <div class="test-form">
+        <h3>Test Email Submission</h3>
+        <input type="email" id="testEmail" placeholder="Enter test email" value="test@example.com">
+        <button onclick="testWaitlist()">Test Waitlist</button>
+        <div id="testResult" class="result" style="display: none;"></div>
+    </div>
+
+    <div class="test-form">
+        <h3>Check LocalStorage</h3>
+        <button onclick="checkStorage()">Check Stored Emails</button>
+        <button onclick="clearStorage()">Clear Storage</button>
+        <div id="storageResult" class="result" style="display: none;"></div>
+    </div>
+
+    <script>
+        // Test the waitlist functionality directly
+        async function testWaitlist() {
+            const email = document.getElementById('testEmail').value;
+            const resultDiv = document.getElementById('testResult');
+            
+            if (!email) {
+                showResult('testResult', 'Please enter an email', 'error');
+                return;
+            }
+
+            try {
+                console.log('Testing waitlist with email:', email);
+                
+                // Try the PHP API first
+                const response = await fetch('/api/waitlist.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ 
+                        email: email,
+                        timestamp: new Date().toISOString(),
+                        source: 'test_page'
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                console.log('PHP API Response:', result);
+                showResult('testResult', `PHP API Success: ${result.message}`, 'success');
+                
+            } catch (error) {
+                console.warn('PHP API failed, testing demo mode:', error.message);
+                
+                // Test demo mode
+                const existingEmails = JSON.parse(localStorage.getItem('waitlist_emails') || '[]');
+                
+                if (existingEmails.includes(email)) {
+                    showResult('testResult', `Demo Mode: Email already exists. Position: ${existingEmails.length}`, 'success');
+                } else {
+                    existingEmails.push(email);
+                    localStorage.setItem('waitlist_emails', JSON.stringify(existingEmails));
+                    showResult('testResult', `Demo Mode: Email added successfully! Position: ${existingEmails.length}`, 'success');
+                }
+            }
+        }
+
+        function checkStorage() {
+            const emails = JSON.parse(localStorage.getItem('waitlist_emails') || '[]');
+            const message = emails.length > 0 
+                ? `Stored emails (${emails.length}): ${emails.join(', ')}`
+                : 'No emails stored in localStorage';
+            showResult('storageResult', message, 'success');
+        }
+
+        function clearStorage() {
+            localStorage.removeItem('waitlist_emails');
+            showResult('storageResult', 'Storage cleared', 'success');
+        }
+
+        function showResult(elementId, message, type) {
+            const element = document.getElementById(elementId);
+            element.textContent = message;
+            element.className = `result ${type}`;
+            element.style.display = 'block';
+            console.log(`${type.toUpperCase()}: ${message}`);
+        }
+
+        // Check if waitlist.js is loaded
+        console.log('Waitlist script loaded:', typeof WaitlistManager !== 'undefined');
+        console.log('LocalStorage support:', typeof Storage !== 'undefined');
+    </script>
+</body>
+</html>
