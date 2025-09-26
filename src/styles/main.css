@@ -139,6 +139,138 @@
   margin: 0 auto;
 }
 
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .section {
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  .section-title h2 {
+    font-size: var(--font-size-2xl);
+    line-height: var(--line-height-tight);
+  }
+  
+  .section-title p {
+    font-size: var(--font-size-base);
+    padding: 0 var(--spacing-sm);
+  }
+  
+  /* Hero section mobile optimizations */
+  .header-hero-content h3 {
+    font-size: 2rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .header-hero-content p {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .hero-benefits {
+    margin-bottom: 1.5rem !important;
+    padding: 1rem !important;
+  }
+  
+  .hero-benefits .row {
+    flex-direction: column;
+  }
+  
+  .hero-benefits .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  /* Button optimizations */
+  .main-btn {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .header-hero-content ul {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+  
+  /* Card optimizations */
+  .services-content .single-services,
+  .testimonial-content .single-testimonial {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  /* Navigation mobile improvements */
+  .navbar-nav {
+    text-align: center;
+    padding: var(--spacing-md) 0;
+  }
+  
+  .navbar-nav .nav-item {
+    margin: 0.25rem 0;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 var(--spacing-xs);
+  }
+  
+  .header-hero-content h3 {
+    font-size: 1.75rem !important;
+  }
+  
+  .header-hero-content p {
+    font-size: 0.95rem !important;
+  }
+  
+  .section-title h2 {
+    font-size: var(--font-size-xl);
+  }
+  
+  /* Smaller spacing for very small screens */
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .hero-benefits {
+    padding: 0.75rem !important;
+  }
+  
+  .benefit-item span {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .main-btn,
+  .nav-link,
+  .page-scroll {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .navbar-toggler {
+    padding: 0.5rem;
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
 /* RTL Support */
 [dir="rtl"] {
   text-align: right;
